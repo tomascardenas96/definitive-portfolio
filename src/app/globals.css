@@ -3,24 +3,52 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-color: #ffffffb9;
+  --details-primary-color: #9883e5;
+  --container-background: #ffffff03;
+  --inner-container-background: #ffffff0c;
+  --container-border: rgba(255, 255, 255, 0.09);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
+    --font-color: #ffffffb9;
+    --details-primary-color: #9883e5;
+    --container-background: rgba(255, 255, 255, 0.09);
+    --inner-container-background: #ffffff0c;
+    --container-border: rgba(255, 255, 255, 0.09);
   }
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  color: var(--font-color);
+}
+
+.container {
+  @apply border border-[var(--container-border)] rounded-2xl;
+  background: linear-gradient(110deg, #d9d9d90d, #d9d9d90b);
+}
+
+@media (prefers-color-scheme: dark) and (min-width: 1024px) {
+  :root {
+    --background: linear-gradient(120deg, #05080a 50%, #344966);
+    --foreground: #ededed;
+  }
 }
