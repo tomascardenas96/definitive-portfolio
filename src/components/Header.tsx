@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Header = () => {
   const styles = {
     card: "grid place-content-center",
@@ -11,7 +13,7 @@ const Header = () => {
     <nav className="flex h-[100%] rounded-t-2xl items-center justify-center bg-[#05080a] left-0 w-full border-t border-[#4747476f] select-none xl:hidden">
       <ul className="w-[96%] h-[90%] grid grid-cols-5 max-w-[28.875rem]">
         <li className={styles.card}>
-          <a className={styles.iconContainer} href="/#presentation">
+          <Link className={styles.iconContainer} href="/#presentation">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="27"
@@ -29,11 +31,11 @@ const Header = () => {
               <path d="M3 22h18" />
             </svg>
             <p className={styles.title}>Presentacion</p>
-          </a>
+          </Link>
         </li>
 
         <li className={styles.card}>
-          <a className={styles.iconContainer} href="/#stack">
+          <Link className={styles.iconContainer} href="/#stack">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="27"
@@ -50,12 +52,12 @@ const Header = () => {
               <rect width="9" height="7" x="3" y="14" rx="1" />
               <rect width="5" height="7" x="16" y="14" rx="1" />
             </svg>
-          </a>
+          </Link>
           <p className={styles.title}>Stack</p>
         </li>
 
         <li className={styles.card}>
-          <a className={styles.iconContainer} href="/#testimonials">
+          <Link className={styles.iconContainer} href="/#testimonials">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="27"
@@ -70,12 +72,12 @@ const Header = () => {
             >
               <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
             </svg>
-          </a>
+          </Link>
           <p className={styles.title}>Testimonios</p>
         </li>
 
         <li className={styles.card}>
-          <a className={styles.iconContainer} href="/#projects">
+          <Link className={styles.iconContainer} href="/#projects">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="27"
@@ -93,12 +95,12 @@ const Header = () => {
               <path d="M22 13a18.15 18.15 0 0 1-20 0" />
               <rect width="20" height="14" x="2" y="6" rx="2" />
             </svg>
-          </a>
+          </Link>
           <p className={styles.title}>Proyectos</p>
         </li>
 
         <li className={styles.card}>
-          <a className={styles.iconContainer}>
+          <Link className={styles.iconContainer} href="#">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="28"
@@ -115,7 +117,7 @@ const Header = () => {
               <circle cx="12" cy="10" r="4" />
               <circle cx="12" cy="12" r="10" />
             </svg>
-          </a>
+          </Link>
           <p className={styles.title}>Iniciar Sesion</p>
         </li>
       </ul>

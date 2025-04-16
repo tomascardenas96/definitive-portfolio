@@ -1,6 +1,5 @@
 import { CloudDownload, Dot } from "lucide-react";
 import React from "react";
-import Image from "next/image";
 
 function Presentation() {
   return (

@@ -9,6 +9,7 @@ import Stacks from "@/components/Stacks";
 import Testimonials from "@/components/Testimonials";
 import InformativeCard from "@/components/ui/InformativeCard";
 import { JSX } from "react";
+import DesktopHeader from "@/components/ui/DesktopHeader";
 
 export default function Home(): JSX.Element {
   return (
@@ -25,7 +26,9 @@ export default function Home(): JSX.Element {
       "
     >
       <div className="grid gap-2 h-full xl:grid-cols-[1fr_1.45fr] xl:grid-rows-[2.4rem_1fr] 2xl:grid-rows-[3rem_1fr] 2xl:gap-3 2xl:grid-cols-[1fr_1.3fr]">
-        <nav className="h-[2.4rem] container hidden rows col-span-full !rounded-[.2rem] xl:grid 2xl:h-[3rem]"></nav>
+        <nav className="h-[2.4rem] container hidden rows col-span-full !rounded-[.2rem] xl:grid 2xl:h-[3rem] ">
+          <DesktopHeader />
+        </nav>
 
         {/* Left */}
         <div className="grid grid-rows-[8.2rem_25rem_17.3rem] gap-2 xl:grid-rows-[7.6rem_2fr_1.4fr] 2xl:grid-rows-[10.9rem_2fr_1.4fr] 2xl:gap-3">

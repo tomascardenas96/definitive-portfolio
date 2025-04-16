@@ -29,7 +29,7 @@ function StackCard({ icon, title }: { icon: string; title: string }) {
         {icon === "tailwind" && <RiTailwindCssFill className={iconStyle} />}
         {icon === "mysql" && <GrMysql className={iconStyle} />}
       </p>
-      <h2 className="text-[.65rem]">{title}</h2>
+      <h2 className="text-[.65rem] text-unica">{title}</h2>
     </div>
   );
 }

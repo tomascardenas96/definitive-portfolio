@@ -1,4 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Unica+One&display=swap");
 @import "tailwindcss";
+@plugin 'tailwind-scrollbar';
 
 :root {
   --background: #ffffff;
@@ -8,6 +10,7 @@
   --container-background: #ffffff03;
   --inner-container-background: #ffffff0c;
   --container-border: rgba(255, 255, 255, 0.09);
+  --font-unica: "Unica One", cursive;
 }
 
 @theme inline {

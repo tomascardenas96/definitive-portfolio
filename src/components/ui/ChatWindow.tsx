@@ -1,9 +1,9 @@
 function ChatWindow({
   name,
   message,
-  createdAt,
+  // createdAt,
   location,
-  image,
+  // image,
   isEven,
 }: {
   name: string;

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -18,7 +19,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${montserrat.variable} scrollbar-thumb-sky-700 scrollbar-track-sky-300`}>
+    <html
+      lang="en"
+      className={`${montserrat.variable} scrollbar-thumb-sky-700 scrollbar-track-sky-300`}
+    >
       <body>
         <div id="presentation">{children}</div>
       </body>
