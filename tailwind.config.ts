@@ -7,8 +7,11 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-montserrat)", "sans-serif"],
       },
+      screens: {
+        custom: { raw: "(min-width: 1536px) and (min-height: 960px)" },
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 };
 export default config;

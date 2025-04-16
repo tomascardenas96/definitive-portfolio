@@ -14,7 +14,7 @@ function SkillCard({
   const iconStyles = "w-3 h-3 text-[var(--details-primary-color)]";
 
   return (
-    <div className="px-3 py-2 w-max border border-[var(--container-border)] flex gap-2 text-[.5rem] rounded-full items-center h-[2.1rem] bg-[var(--inner-container-background)]">
+    <div className="px-3 py-2 w-max border border-[var(--container-border)] flex gap-2 text-[.53rem] rounded-full items-center h-[2.1rem] bg-[var(--inner-container-background)] xl:h-[1.8rem]">
       {icon === "location" && <MapPinned className={iconStyles} />}
       {icon === "language" && <Globe className={iconStyles} />}
       {icon === "friendship" && <Handshake className={iconStyles} />}

@@ -18,9 +18,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={montserrat.variable}>
+    <html lang="en" className={`${montserrat.variable} scrollbar-thumb-sky-700 scrollbar-track-sky-300`}>
       <body>
-        <div className="w-[80rem] h-full">{children}</div>
+        <div id="presentation">{children}</div>
       </body>
     </html>
   );

@@ -11,22 +11,25 @@ import { SiAstro } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 
 function StackCard({ icon, title }: { icon: string; title: string }) {
+  const iconStyle = "text-[1.1rem] 2xl:text-[1.2rem]";
   return (
-    <div className="flex gap-1 h-[100%] w-[100%] text-[.5rem] items-center justify-center">
+    <div className="flex gap-1 h-[100%] w-[100%] text-[.6rem] items-center justify-center">
       <p>
-        {icon === "html" && <FaHtml5 className="text-[.9rem]"/>}
-        {icon === "css" && <FaCss3 className="text-[.9rem]"/>}
-        {icon === "js" && <IoLogoJavascript className="text-[.9rem]"/>}
-        {icon === "ts" && <SiTypescript className="text-[.85rem]"/>}
-        {icon === "node" && <FaNodeJs className="text-[.9rem]"/>}
-        {icon === "nest" && <SiNestjs className="text-[.9rem]"/>}
-        {icon === "react" && <FaReact className="text-[.9rem]"/>}
-        {icon === "next" && <RiNextjsFill className="text-[.9rem]"/>}
-        {icon === "astro" && <SiAstro className="text-[.9rem]"/>}
-        {icon === "tailwind" && <RiTailwindCssFill className="text-[.9rem]"/>}
-        {icon === "mysql" && <GrMysql className="text-[.9rem]"/>}
+        {icon === "html" && <FaHtml5 className={iconStyle} />}
+        {icon === "css" && <FaCss3 className={iconStyle} />}
+        {icon === "js" && <IoLogoJavascript className={iconStyle} />}
+        {icon === "ts" && (
+          <SiTypescript className="text-[1rem] 2xl:text-[1.14rem]" />
+        )}
+        {icon === "node" && <FaNodeJs className={iconStyle} />}
+        {icon === "nest" && <SiNestjs className={iconStyle} />}
+        {icon === "react" && <FaReact className={iconStyle} />}
+        {icon === "next" && <RiNextjsFill className={iconStyle} />}
+        {icon === "astro" && <SiAstro className={iconStyle} />}
+        {icon === "tailwind" && <RiTailwindCssFill className={iconStyle} />}
+        {icon === "mysql" && <GrMysql className={iconStyle} />}
       </p>
-      <h2>{title}</h2>
+      <h2 className="text-[.65rem]">{title}</h2>
     </div>
   );
 }
