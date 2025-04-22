@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { LogOut } from "lucide-react";
+import Image from "next/image";
 
 const Header = () => {
   const { data: session } = useSession();
@@ -111,8 +112,14 @@ const Header = () => {
             onClick={() => signOut()}
           >
             <li className={styles.card}>
-              <LogOut className="lucide lucide-circle-user-round-icon lucide-circle-user-round justify-self-center text-[#921919]" />
-              <p className={styles.title}>{session.user?.name} </p>
+              <Image
+                src={session.user?.image || ""}
+                alt="user"
+                width={28}
+                height={28}
+                className="rounded-full justify-self-center border border-[#ffffff] shadow-md shadow-black/50"
+              />
+              <p className={`${styles.title}`}>Cerrar Sesion</p>
             </li>
           </div>
         ) : (
