@@ -25,7 +25,7 @@ function Testimonials() {
         />
       </div>
 
-      <div className="grid grid-rows-[1fr_3.5rem] px-1 gap-4 mt-1 max-h-[19.7rem] overflow-hidden xl:h-[calc(44vh-5.5rem)] xl:min-h-[14.375rem] xl:max-h-[26rem] 2xl:min-h-[18.7rem]">
+      <div className="grid grid-rows-[1fr_3.5rem] px-1 gap-4 mt-1 max-h-[21.5rem] overflow-hiddenxl:h-[calc(44vh-5.5rem)] xl:min-h-[14.375rem] xl:max-h-[26rem] xl:grid-rows-[1fr_3rem] 2xl:min-h-[18.7rem]">
         <div
           className="grid overflow-y-auto gap-3 px-4 mt-2 2xl:scrollbar-thin 2xl:scrollbar-thumb-[#ffffff48] 2xl:scrollbar-track-[transparent]"
           ref={scrollRef}
@@ -43,16 +43,16 @@ function Testimonials() {
           ))}
         </div>
 
-        <form className="grid grid-cols-[1fr_3rem] px-5 gap-2">
+        <form className="grid grid-cols-[1fr_3rem] px-5 gap-2 xl:gap-0 xl:px-2">
           <input
             type="text"
             placeholder="Escribe tu mensaje..."
-            className="bg-white h-[2.5rem] rounded-full border border-[#b0b0b0] shadow-sm shadow-[#ffffff4c] px-4 text-[#00000093] outline-none text-[.9rem]"
+            className="bg-white h-[2.5rem] rounded-full border border-[#b0b0b0] shadow-sm shadow-[#ffffff4c] px-4 text-[#00000093] outline-none text-[.9rem] xl:h-[2.1rem]"
           />
 
-          <div className="h-[2.5rem] flex justify-center">
-            <button className="rounded-full w-[2.5rem] h-[2.5rem] bg-[#3D8C18] grid place-content-center shadow-sm shadow-[#ffffff4c]">
-              <IoSend className="text-[1.3rem]" />
+          <div className="h-[2.5rem] flex justify-center xl:h-[2.1rem]">
+            <button className="rounded-full w-[2.5rem] h-[2.5rem] bg-[#3D8C18] grid place-content-center shadow-sm shadow-[#ffffff4c] xl:w-[2.1rem] xl:h-[2.1rem]">
+              <IoSend className="text-[1.3rem] cursor-pointer xl:text-[1.1rem]" />
             </button>
           </div>
         </form>

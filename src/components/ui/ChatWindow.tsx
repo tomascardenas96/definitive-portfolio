@@ -35,7 +35,7 @@ function ChatWindow({
       </div>
 
       <div className="px-3 py-3 pb-4">
-        <p className="text-[.75rem]">{message}</p>
+        <p className="text-[.72rem]">{message}</p>
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ function Projects() {
         />
       </div>
 
-      <div className="grid h-[100%] w-[100%] items-center justify-center pb-[3rem] xl:pb-0 2xl:pb-4">
+      <div className="grid h-[100%] w-[100%] items-center justify-center pb-1 xl:pb-0 2xl:pb-4">
         <ul className="grid items-center gap-1 2xl:gap-2 2xl:w-[14rem]">
           <ProjectCard title="Nutricoaching Integral" icon="gula" />
           <ProjectCard title="Roma Blog" icon="gula" />

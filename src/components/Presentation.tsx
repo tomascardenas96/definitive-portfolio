@@ -15,19 +15,19 @@ function Presentation() {
 
       <div className="py-2 grid grid-rows-[max-content_max-content_1fr] 2xl:gap-1">
         <div>
-          <p className="flex items-center w-max border border-[var(--container-border)] pr-4 px-1 rounded-3xl bg-[var(--inner-container-background)] 2xl:px-2 2xl:pr-4 2xl:h-[1.8rem]">
-            <Dot className="text-[#2CB933] w-6 h-6" />
-            <span className="text-[8px] pt-[.1rem] 2xl:text-[.6rem]">
+          <p className="flex items-center w-max border border-[var(--container-border)] pr-4 px-1 rounded-3xl bg-[var(--inner-container-background)] 2xl:px-2 2xl:pr-4 2xl:h-[1.6rem]">
+            <Dot className="text-[#2CB933] w-5 h-5" />
+            <span className="text-[8px] pt-[.1rem] 2xl:text-[.55rem]">
               DISPONIBLE
             </span>
           </p>
         </div>
 
-        <h2 className="flex h-full align-center text-[1.1rem] mt-1 font-medium 2xl:text-[1.3rem]">
+        <h2 className="flex h-full align-center text-[1.1rem] mt-1 font-medium 2xl:text-[1.2rem]">
           Tomás Cárdenas
         </h2>
 
-        <p className="text-[10px] flex items-center gap-1 2xl:text-[.77rem]">
+        <p className="text-[10px] flex items-center gap-1 2xl:text-[.7rem]">
           Desarrollador Web{" "}
           <span className="text-[var(--details-primary-color)]">
             Full-stack!

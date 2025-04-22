@@ -12,13 +12,13 @@ function Footer() {
   return (
     <footer className="h-[85%] w-5/6 flex flex-col justify-center gap-5 xl:gap-4">
       <div className="flex justify-center">
-        <div className="h-[5.3rem] w-[5.3rem] rounded-full bg-[var(--inner-container-background)] border border-[var(--container-border)] grid place-content-center xl:h-[4.6rem] xl:w-[4.6rem]">
-          <GiQueenCrown className="w-[2rem] h-[2rem] text-[var(--details-primary-color)] xl:h-[1.8rem] xl:w-[1.8rem]" />
+        <div className="h-[5rem] w-[5rem] rounded-full bg-[var(--inner-container-background)] border border-[var(--container-border)] grid place-content-center xl:h-[4.6rem] xl:w-[4.6rem]">
+          <GiQueenCrown className="w-[1.8rem] h-[1.8rem] text-[var(--details-primary-color)] xl:h-[1.8rem] xl:w-[1.8rem]" />
         </div>
       </div>
 
       <div className="grid text-center gap-[.1rem] mb-1">
-        <h1 className="text-[1.2rem] xl:text-[1rem] 2xl:text-[1.2rem]">
+        <h1 className="text-[1rem] xl:text-[1rem] 2xl:text-[1.2rem]">
           Trabajemos Juntos
         </h1>
         <p className="text-[.73rem] xl:text-[.65rem] 2xl:text-[.73rem]">

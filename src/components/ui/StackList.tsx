@@ -2,10 +2,10 @@ import StackCard from "./StackCard";
 
 function StackList() {
   const styles = {
-    container: "flex gap-[.3rem] h-9 justify-center 2xl:h-[2.4rem] 2xl:gap-2",
+    container: "flex gap-[.3rem] h-9 justify-center 2xl:h-[2.3rem] 2xl:gap-2",
     card: "flex justify-center items-center text-xs border border-[var(--container-border)] rounded-[.5rem] bg-[var(--inner-container-background)] w-[5rem] 2xl:w-[6rem]",
     emptyContainer:
-      "hidden container w-[4rem] !rounded-[.5rem] xl:inline-block 2xl:w-[5.3rem]",
+      "hidden container w-[4rem] !rounded-[.5rem] xl:inline-block 2xl:w-[4.4rem]",
   };
 
   return (

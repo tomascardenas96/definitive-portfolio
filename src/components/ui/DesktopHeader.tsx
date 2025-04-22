@@ -1,18 +1,33 @@
+"use client";
 import { User } from "lucide-react";
 
+import { signIn, signOut, useSession } from "next-auth/react";
+import Image from "next/image";
+
 function DesktopHeader() {
+  const { data: session } = useSession();
+
   return (
-    <div className="w-[85%] justify-self-center flex justify-between items-center">
+    <div className="w-[91%] justify-self-center flex justify-between items-center">
       <div>
-        <h1 className="text-[.9rem]">Tomas Cardenas</h1>
+        <h1 className="text-[.9rem] cursor-pointer px-8">Tomas Cardenas</h1>
       </div>
 
-      <div className="flex gap-3 items-center">
-        <p className="text-[.9rem]">Iniciar Sesion</p>
-        <div className="h-full ">
-          <User className="w-[1rem] h-[1rem] flex " />
+      {session ? (
+        <div className="flex items-center gap-4">
+          <p>{session.user?.name}</p>
+          <button onClick={() => signOut()} className="text-sm text-red-500">
+            Cerrar sesión
+          </button>
         </div>
-      </div>
+      ) : (
+        <button
+          onClick={() => signIn("google")}
+          className="text-sm text-blue-500"
+        >
+          Iniciar sesión con Google
+        </button>
+      )}
     </div>
   );
 }
