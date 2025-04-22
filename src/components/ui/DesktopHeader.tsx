@@ -20,7 +20,7 @@ function DesktopHeader() {
         </div>
       ) : (
         <button
-          onClick={() => signIn("google")}
+        onClick={() => signIn("google", { prompt: "select_account" })}
           className="text-sm text-blue-500"
         >
           Iniciar sesión con Google

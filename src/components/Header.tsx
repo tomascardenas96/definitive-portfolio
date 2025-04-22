@@ -124,7 +124,7 @@ const Header = () => {
         ) : (
           <div
             className={`${styles.iconContainer} pt-[.15rem]`}
-            onClick={() => signIn("google")}
+            onClick={() => signIn("google", { prompt: "select_account" })}
           >
             <li className={styles.card}>
               <svg
