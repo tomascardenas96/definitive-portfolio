@@ -83,14 +83,14 @@ export default function Home(): JSX.Element {
               <Networks />
             </section>
 
-            <section className="container flex items-center justify-center mb-[6.4rem] xl:mb-0">
+            <section className="container flex items-center justify-center mb-[5.4rem] xl:mb-0">
               <Footer />
             </section>
           </div>
         </div>
       </div>
 
-      <nav className="h-24 col-span-full fixed left-0 bottom-0 w-full xl:hidden">
+      <nav className="h-22 col-span-full fixed left-0 bottom-0 w-full xl:hidden">
         <Header />
       </nav>
     </main>

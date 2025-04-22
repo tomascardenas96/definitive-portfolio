@@ -20,7 +20,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #000000;
+    --background: linear-gradient(90deg, #05080a, #1a212c);
     --foreground: #ededed;
     --font-color: #ffffffb9;
     --details-primary-color: #9883e5;

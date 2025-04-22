@@ -1,4 +1,5 @@
 import { CloudDownload, Dot } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 function Presentation() {
@@ -35,14 +36,21 @@ function Presentation() {
         </p>
       </div>
 
-      <div className="flex gap-2">
-        <p className="text-[9px] max-w-[7ch] text-center h-10 flex items-center 2xl:text-[.6rem]">
-          Currilum Vitae
-        </p>
-        <button className="h-10 w-10 grid place-content-center border border-[var(--container-border)] bg-[var(--inner-container-background)] rounded-xl">
-          <CloudDownload className="w-[1rem] h-[1rem]" />
-        </button>
-      </div>
+      <Link
+        href="/cv/CV-Tomas-Cardenas-es-UPDATED.pdf"
+        target="_blank"
+        className="cursor-pointer h-max"
+        rel="noopener noreferrer" // para evitar que se abra en una nueva pestaña y se cierre la actual
+      >
+        <div className="flex gap-2">
+          <p className="text-[9px] max-w-[7ch] text-center h-10 flex items-center 2xl:text-[.6rem] cursor-pointer">
+            Currilum Vitae
+          </p>
+          <button className="h-10 w-10 grid place-content-center border border-[var(--container-border)] bg-[var(--inner-container-background)] rounded-xl cursor-pointer">
+            <CloudDownload className="w-[1rem] h-[1rem]" />
+          </button>
+        </div>
+      </Link>
     </div>
   );
 }
