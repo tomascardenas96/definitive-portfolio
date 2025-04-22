@@ -31,7 +31,7 @@ export default function Home(): JSX.Element {
         </nav>
 
         {/* Left */}
-        <div className="grid grid-rows-[8.2rem_25rem_17.3rem] gap-[.4rem] xl:gap-2 xl:grid-rows-[7.6rem_2fr_1.4fr] 2xl:grid-rows-[9.5rem_2fr_1.6fr]">
+        <div className="grid grid-rows-[8.2rem_25rem_17.3rem] gap-[.4rem] xl:gap-2 xl:grid-rows-[7.6rem_2fr_1.4fr] 2xl:grid-rows-[9.5rem_2fr_1.6fr] ">
           {/* 3 cartitas informativas */}
           <section className="grid grid-cols-3 gap-1 xl:gap-2">
             <InformativeCard num={0} title="Proyectos" icon="proyects" />
