@@ -1,6 +1,5 @@
 "use client";
 
-// import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 
 const Header = () => {
@@ -12,7 +11,6 @@ const Header = () => {
     titleActive: "",
   };
 
-  // const { data: session } = useSession();
 
   return (
     <nav className="flex h-[100%] rounded-t-2xl items-center justify-center bg-[#05080a] left-0 w-full border-t border-[#4747476f] max-w-[28.25rem] justify-self-center select-none xl:hidden">
