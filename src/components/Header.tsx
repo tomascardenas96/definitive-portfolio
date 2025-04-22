@@ -8,7 +8,7 @@ const Header = () => {
   const { data: session } = useSession();
 
   const styles = {
-    card: "grid items-center text-center grid-rows-[max-content_1.2rem]",
+    card: "grid items-center text-center grid-rows-[max-content_1rem]",
     iconContainer: "grid place-content-center",
     title: "text-[.55rem] mt-1 leading-none",
     iconActive: "",
@@ -22,8 +22,8 @@ const Header = () => {
           <li className={styles.card}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="27"
-              height="27"
+              width="25"
+              height="25"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -44,8 +44,8 @@ const Header = () => {
           <li className={styles.card}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="27"
-              height="27"
+              width="25"
+              height="25"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -66,8 +66,8 @@ const Header = () => {
           <li className={styles.card}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="27"
-              height="27"
+              width="25"
+              height="25"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -86,8 +86,8 @@ const Header = () => {
           <li className={styles.card}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="27"
-              height="27"
+              width="25"
+              height="25"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -114,8 +114,8 @@ const Header = () => {
               <Image
                 src={session.user?.image || ""}
                 alt="user"
-                width={28}
-                height={28}
+                width={25}
+                height={25}
                 className="rounded-full justify-self-center border border-[#ffffff] shadow-md shadow-black/50"
               />
               <p className={`${styles.title}`}>Cerrar Sesion</p>
@@ -129,8 +129,8 @@ const Header = () => {
             <li className={styles.card}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="28"
-                height="28"
+                width="25"
+                height="25"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
