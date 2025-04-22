@@ -90,7 +90,7 @@ export default function Home(): JSX.Element {
         </div>
       </div>
 
-      <nav className="h-22 col-span-full fixed left-0 bottom-0 w-full xl:hidden">
+      <nav className="h-20 col-span-full fixed left-0 bottom-0 w-full xl:hidden">
         <Header />
       </nav>
     </main>

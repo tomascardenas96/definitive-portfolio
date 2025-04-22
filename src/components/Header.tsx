@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react";
-import { LogOut } from "lucide-react";
 import Image from "next/image";
 
 const Header = () => {
