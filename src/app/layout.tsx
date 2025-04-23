@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Montserrat, Unica_One } from "next/font/google";
 
 import SessionWrapper from "@/providers/SessionWrapper";
 import "./globals.css";
@@ -7,6 +7,12 @@ import "./globals.css";
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
+});
+
+const unicaOne = Unica_One({
+  subsets: ["latin"],
+  variable: "--font-unica-one",
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -21,11 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      className={`${montserrat.variable} scrollbar-thumb-sky-700 scrollbar-track-sky-300`}
-      
+      lang="es"
+      className={`${montserrat.variable} ${unicaOne.variable}scrollbar-thumb-sky-700 scrollbar-track-sky-300`}
     >
-      <body className="xl:h-screen">
+      <body className="font-montserrat xl:h-screen">
         <div id="presentation">
           <SessionWrapper>{children}</SessionWrapper>
         </div>

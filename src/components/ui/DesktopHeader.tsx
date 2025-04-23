@@ -8,7 +8,9 @@ function DesktopHeader() {
   return (
     <div className="w-[91%] justify-self-center flex justify-between items-center">
       <div>
-        <h1 className="text-[.9rem] cursor-pointer px-8">Tomas Cardenas</h1>
+        <h1 className="text-[.9rem] cursor-pointer px-8 !font-unica">
+          Tomas Cardenas
+        </h1>
       </div>
 
       {session ? (
@@ -20,7 +22,7 @@ function DesktopHeader() {
         </div>
       ) : (
         <button
-        onClick={() => signIn("google", { prompt: "select_account" })}
+          onClick={() => signIn("google", { prompt: "select_account" })}
           className="text-sm text-blue-500"
         >
           Iniciar sesión con Google

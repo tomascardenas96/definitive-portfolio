@@ -6,7 +6,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-montserrat)", "sans-serif"],
-        unica: ["var(--font-unica)"],
+        unica: ["var(--font-unica-one)", "sans-serif"],
       },
       screens: {
         custom: { raw: "(min-width: 1536px) and (min-height: 960px)" },
