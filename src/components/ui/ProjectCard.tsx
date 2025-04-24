@@ -12,7 +12,7 @@ function ProjectCard({ title, icon }: { title: string; icon?: string }) {
       </div>
 
       <div className="grid items-center">
-        <p className="text-[.7rem]">{title}</p>
+        <p className="text-[.65rem]">{title}</p>
       </div>
     </li>
   );

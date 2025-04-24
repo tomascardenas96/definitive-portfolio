@@ -28,7 +28,7 @@ function Presentation() {
           Tomás Cárdenas
         </h2>
 
-        <p className="text-[10px] flex items-center gap-1 2xl:text-[.7rem]">
+        <p className="text-[10px] flex items-center gap-1 2xl:text-[.7rem] header-font xl:h-max xl:pt-1">
           Desarrollador Web{" "}
           <span className="text-[var(--details-primary-color)]">
             Full-stack!

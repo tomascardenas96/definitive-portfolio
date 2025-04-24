@@ -30,7 +30,7 @@ export default function RootLayout({
       lang="es"
       className={`${montserrat.variable} ${unicaOne.variable}scrollbar-thumb-sky-700 scrollbar-track-sky-300`}
     >
-      <body className="font-montserrat xl:h-screen">
+      <body className="global-font xl:h-screen">
         <div id="presentation">
           <SessionWrapper>{children}</SessionWrapper>
         </div>

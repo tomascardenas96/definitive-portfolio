@@ -21,7 +21,7 @@ function Footer() {
         <h1 className="text-[1rem] xl:text-[1rem] 2xl:text-[1.2rem]">
           Trabajemos Juntos
         </h1>
-        <p className="text-[.73rem] xl:text-[.65rem] 2xl:text-[.73rem]">
+        <p className="text-[.73rem] header-font xl:text-[.65rem] 2xl:text-[.73rem]">
           Let’s Make Magic Happen Together!
         </p>
       </div>

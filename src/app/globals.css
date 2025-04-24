@@ -41,6 +41,14 @@ body {
   color: var(--font-color);
 }
 
+.header-font {
+  font-family: "Unica One", cursive;
+}
+
+.global-font {
+  font-family: var(--font-montserrat);
+}
+
 .container {
   @apply border border-[var(--container-border)] rounded-2xl;
   background: linear-gradient(110deg, #d9d9d915, #d9d9d90f);

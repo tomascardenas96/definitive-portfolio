@@ -35,7 +35,7 @@ function InformativeCard({
             <Sparkles className={iconStyles} />
           )}
         </p>
-        <p className="text-[.5625rem] align-center text-[var(--font-color)] xl:text-[.63rem]">
+        <p className="text-[.5625rem] align-center header-font text-[var(--font-color)] xl:text-[.63rem]">
           {title}
         </p>
       </div>
