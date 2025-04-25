@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
+import { authOptions } from "@/lib/authOptions";
 import { prisma } from "@/lib/prisma";
 import { commentSchema } from "@/utils/validate";
 import { getServerSession, Session } from "next-auth";
-import { authOptions } from "@/lib/authOptions";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function GET() {
   try {

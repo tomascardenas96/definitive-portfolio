@@ -3,7 +3,7 @@
 import { toast } from "sonner";
 
 async function useDeleteMessage(): Promise<{
-  handleDelete: (string: any) => void;
+  handleDelete: (id: string) => void;
 }> {
   const handleDelete = async (id: string) => {
     const deleteMessage = async () => {

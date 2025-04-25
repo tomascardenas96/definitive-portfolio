@@ -1,6 +1,4 @@
-import useDeleteMessage from "@/hooks/useDeleteMessage";
 import { Trash } from "lucide-react";
-import { useEffect, useState } from "react";
 
 function ChatWindow({
   name,
@@ -19,11 +17,12 @@ function ChatWindow({
   image: string;
   isEven: boolean;
   id: string;
-  handleDelete: (id: string) => void;
+  handleDelete: ((id: string) => void) | null;
 }) {
-  
   const onDelete = () => {
-    handleDelete(id);
+    if (id && handleDelete) {
+      handleDelete(id);
+    }
   };
 
   return (

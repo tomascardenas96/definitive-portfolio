@@ -18,10 +18,10 @@ export const useCreateComment = () => {
         throw new Error("Failed to create comment");
       }
 
-      const data = await response.json();
-
       setNewComment("");
       setIsLoadingCreate(false);
+
+      return await response.json();
     } catch (error) {
       console.error(error);
       setErrorCreate(error as string);

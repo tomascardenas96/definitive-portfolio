@@ -1,9 +1,10 @@
 "use client";
 
+import { Comment } from "@prisma/client";
 import { useEffect, useState } from "react";
 
 function useGetMessages() {
-  const [messages, setMessages] = useState<any>([]);
+  const [messages, setMessages] = useState<Comment[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 

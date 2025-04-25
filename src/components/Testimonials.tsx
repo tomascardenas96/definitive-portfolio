@@ -10,18 +10,11 @@ import ChatWindow from "./ui/ChatWindow";
 import SectionHeader from "./ui/SectionHeader";
 
 function Testimonials() {
-  const [handleDelete, setHandleDelete] = useState<any>(null);
+  const [handleDelete, setHandleDelete] = useState<((id: string) => void) | null>(null);
 
-  const {
-    newComment,
-    setNewComment,
-    isLoadingCreate,
-    errorCreate,
-    handleSubmit,
-    handleChange,
-  } = useCreateComment();
+  const { newComment, handleSubmit, handleChange } = useCreateComment();
 
-  const { messages, isLoading, error } = useGetMessages();
+  const { messages } = useGetMessages();
 
   useEffect(() => {
     const fetchHandleDelete = async () => {
