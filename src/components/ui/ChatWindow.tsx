@@ -1,18 +1,31 @@
+import useDeleteMessage from "@/hooks/useDeleteMessage";
+import { Trash } from "lucide-react";
+import { useEffect, useState } from "react";
+
 function ChatWindow({
   name,
   message,
-  // createdAt,
   location,
-  // image,
   isEven,
-}: {
+  id,
+  handleDelete,
+}: // image,
+// createdAt,
+{
   name: string;
   message: string;
   createdAt: string;
   location: string;
   image: string;
   isEven: boolean;
+  id: string;
+  handleDelete: (id: string) => void;
 }) {
+  
+  const onDelete = () => {
+    handleDelete(id);
+  };
+
   return (
     <div
       className={`h-[max-content] w-6/7 grid grid-rows-[3.5rem_1fr] container ${
@@ -30,6 +43,9 @@ function ChatWindow({
 
           <div>
             <p className="text-[.6rem]">21 de Marzo de 2024</p>
+            <button onClick={() => onDelete()}>
+              <Trash className="w-[1.2rem] h-[1.2rem]" />
+            </button>
           </div>
         </div>
       </div>

@@ -1,12 +1,37 @@
 "use client";
 
+import { useCreateComment } from "@/hooks/useCreateComment";
+import useDeleteMessage from "@/hooks/useDeleteMessage";
+import useGetMessages from "@/hooks/useGetMessages";
+import { Comment } from "@prisma/client";
+import { useEffect, useRef, useState } from "react";
+import { IoSend } from "react-icons/io5";
 import ChatWindow from "./ui/ChatWindow";
 import SectionHeader from "./ui/SectionHeader";
-import { IoSend } from "react-icons/io5";
-import { messages } from "@/__mocks__/messages.mock";
-import { useEffect, useRef } from "react";
 
 function Testimonials() {
+  const [handleDelete, setHandleDelete] = useState<any>(null);
+
+  const {
+    newComment,
+    setNewComment,
+    isLoadingCreate,
+    errorCreate,
+    handleSubmit,
+    handleChange,
+  } = useCreateComment();
+
+  const { messages, isLoading, error } = useGetMessages();
+
+  useEffect(() => {
+    const fetchHandleDelete = async () => {
+      const { handleDelete } = await useDeleteMessage();
+      setHandleDelete(() => handleDelete);
+    };
+
+    fetchHandleDelete();
+  }, []);
+
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -30,23 +55,30 @@ function Testimonials() {
           className="grid overflow-y-auto gap-3 px-4 mt-2 2xl:scrollbar-thin 2xl:scrollbar-thumb-[#ffffff48] 2xl:scrollbar-track-[transparent]"
           ref={scrollRef}
         >
-          {messages?.map((message, index) => (
+          {messages?.map((message: Comment, index: number) => (
             <ChatWindow
               key={`message-${message.id}`}
-              createdAt={message.createdAt}
+              createdAt={message.createdAt.toString()}
               image={message.image}
               location={message.location}
-              message={message.message}
+              message={message.content}
               name={message.name}
+              id={message.id}
+              handleDelete={handleDelete}
               isEven={index % 2 === 0}
             />
           ))}
         </div>
 
-        <form className="grid grid-cols-[1fr_3rem] px-5 gap-2 xl:gap-0 xl:px-2">
+        <form
+          className="grid grid-cols-[1fr_3rem] px-5 gap-2 xl:gap-0 xl:px-2"
+          onSubmit={handleSubmit}
+        >
           <input
             type="text"
             placeholder="Escribe tu mensaje..."
+            onChange={handleChange}
+            value={newComment}
             className="bg-white h-[2.5rem] rounded-full border border-[#b0b0b0] shadow-sm shadow-[#ffffff4c] px-4 text-[#00000093] outline-none text-[.9rem] xl:h-[2.1rem]"
           />
 

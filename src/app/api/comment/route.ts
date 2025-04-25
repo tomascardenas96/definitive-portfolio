@@ -1,12 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { commentSchema } from "@/utils/validate";
+import { getServerSession, Session } from "next-auth";
+import { authOptions } from "@/lib/authOptions";
 
 export async function GET() {
   try {
     const comments = await prisma.comment.findMany({
       orderBy: {
-        createdAt: "desc",
+        createdAt: "asc",
       },
     });
 
@@ -22,8 +24,13 @@ export async function GET() {
 
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
+    const session: Session | null = await getServerSession(authOptions);
 
+    if (!session) {
+      return NextResponse.json({ error: "Unauthorized user" }, { status: 401 });
+    }
+
+    const body = await req.json();
     const parsed = commentSchema.safeParse(body);
 
     if (!parsed.success) {
@@ -33,11 +40,22 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const comment = await prisma.comment.create({
-      data: parsed.data,
+    const { name, email, image } = session.user!;
+
+    console.log(session.user!);
+
+    await prisma.comment.create({
+      data: {
+        content: parsed.data.content,
+        name: name!,
+        image: image!,
+        email: email!,
+        location: "Benito Juarez, AR",
+        googleId: "abc123",
+      },
     });
 
-    return NextResponse.json(comment, { status: 201 });
+    return NextResponse.json({ message: "Comment created" }, { status: 201 });
   } catch (error) {
     console.error(error);
     return NextResponse.json(

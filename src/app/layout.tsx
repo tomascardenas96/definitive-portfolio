@@ -3,6 +3,7 @@ import { Montserrat, Unica_One } from "next/font/google";
 
 import SessionWrapper from "@/providers/SessionWrapper";
 import "./globals.css";
+import { Toaster } from "sonner";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({
         <div id="presentation">
           <SessionWrapper>{children}</SessionWrapper>
         </div>
+        <Toaster />
       </body>
     </html>
   );

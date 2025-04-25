@@ -17,4 +17,7 @@ model Comment {
   createdAt DateTime @default(now())
   email     String
   googleId  String
+  name      String
+  image     String
+  location  String
 }
