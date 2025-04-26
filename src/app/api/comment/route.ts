@@ -1,11 +1,13 @@
 import { authOptions } from "@/lib/authOptions";
-import { prisma } from "@/lib/prisma";
+import { initializeDatabase, prisma } from "@/lib/prisma";
 import { commentSchema } from "@/utils/validate";
 import { getServerSession, Session } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET() {
   try {
+    await initializeDatabase();
+
     const comments = await prisma.comment.findMany({
       orderBy: {
         createdAt: "asc",
@@ -24,6 +26,7 @@ export async function GET() {
 
 export async function POST(req: NextRequest) {
   try {
+    await initializeDatabase();
     const session: Session | null = await getServerSession(authOptions);
 
     if (!session) {

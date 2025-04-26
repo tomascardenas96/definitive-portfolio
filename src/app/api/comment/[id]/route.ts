@@ -1,4 +1,5 @@
 import { deleteComment } from "@/lib/comment/deleteComment";
+import { initializeDatabase } from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function DELETE(
@@ -6,6 +7,8 @@ export async function DELETE(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    await initializeDatabase();
+    
     const { id } = await params;
 
     const { message, error } = await deleteComment(id);
