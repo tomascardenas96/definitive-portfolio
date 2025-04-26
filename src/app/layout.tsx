@@ -17,7 +17,7 @@ const unicaOne = Unica_One({
 });
 
 export const metadata: Metadata = {
-  title: "Tomas Cardenas - Portafolio personal",
+  title: "Tomas Cardenas - Desarrollador Web Full Stack",
   description: "Portafolio personal de Tomas Cardenas",
 };
 
