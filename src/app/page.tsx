@@ -12,6 +12,7 @@ import { JSX } from "react";
 import DesktopHeader from "@/components/ui/DesktopHeader";
 
 export default function Home(): JSX.Element {
+  console.log(`${process.env.NEXTAUTH_URL}/api/auth/callback/google`)
   return (
     <main
       className="
