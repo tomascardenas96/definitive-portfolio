@@ -1,8 +1,12 @@
 "use client";
 
+import { Comment } from "@prisma/client";
+import React from "react";
 import { toast } from "sonner";
 
-async function useDeleteMessage(): Promise<{
+async function useDeleteMessage(
+  setMessages: React.Dispatch<React.SetStateAction<Comment[]>>
+): Promise<{
   handleDelete: (id: string) => void;
 }> {
   const handleDelete = async (id: string) => {
@@ -21,7 +25,10 @@ async function useDeleteMessage(): Promise<{
 
     toast.promise(deleteMessage(), {
       loading: "Eliminando mensaje...",
-      success: "Mensaje eliminado correctamente",
+      success: () => {
+        setMessages((prev) => prev.filter((message) => message.id !== id));
+        return "Mensaje eliminado correctamente";
+      },
       error: "Error al eliminar el mensaje",
     });
   };

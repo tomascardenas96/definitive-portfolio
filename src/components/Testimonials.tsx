@@ -10,20 +10,20 @@ import ChatWindow from "./ui/ChatWindow";
 import SectionHeader from "./ui/SectionHeader";
 
 function Testimonials() {
+  const { messages, setMessages } = useGetMessages();
+
   const [handleDelete, setHandleDelete] = useState<
     ((id: string) => void) | null
   >(null);
 
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const { messages, setMessages } = useGetMessages();
-
   const { newComment, handleSubmit, handleChange } =
     useCreateComment(setMessages);
 
   useEffect(() => {
     const fetchHandleDelete = async () => {
-      const { handleDelete } = await useDeleteMessage();
+      const { handleDelete } = await useDeleteMessage(setMessages);
       setHandleDelete(() => handleDelete);
     };
 
@@ -48,7 +48,7 @@ function Testimonials() {
 
       <div className="grid grid-rows-[1fr_3.5rem] px-1 gap-4 mt-1 max-h-[21.5rem] overflow-hidden xl:h-[calc(44vh-5.5rem)] xl:min-h-[14.375rem] xl:max-h-[26rem] xl:grid-rows-[1fr_3rem] 2xl:min-h-[18.7rem]">
         <div
-          className="grid overflow-y-auto gap-3 px-4 mt-2 2xl:scrollbar-thin 2xl:scrollbar-thumb-[#ffffff48] 2xl:scrollbar-track-[transparent]"
+          className="flex flex-col overflow-y-auto gap-3 px-4 mt-2 2xl:scrollbar-thin 2xl:scrollbar-thumb-[#ffffff48] 2xl:scrollbar-track-[transparent]"
           ref={scrollRef}
         >
           {messages?.map((message: Comment, index: number) => (
@@ -79,8 +79,8 @@ function Testimonials() {
           />
 
           <div className="h-[2.5rem] flex justify-center xl:h-[2.1rem]">
-            <button className="rounded-full w-[2.5rem] h-[2.5rem] bg-[#3D8C18] grid place-content-center shadow-sm shadow-[#ffffff4c] xl:w-[2.1rem] xl:h-[2.1rem]">
-              <IoSend className="text-[1.3rem] cursor-pointer xl:text-[1.1rem]" />
+            <button className="rounded-full w-[2.5rem] h-[2.5rem] bg-[#3D8C18] cursor-pointer grid place-content-center shadow-sm hover:bg-[#78ae60] active:scale-90 transition-all duration-300 shadow-[#ffffff4c] xl:w-[2.1rem] xl:h-[2.1rem]">
+              <IoSend className="text-[1.3rem]  xl:text-[1.1rem]" />
             </button>
           </div>
         </form>

@@ -24,8 +24,6 @@ export const useCreateComment = (
 
       const data: Comment = await response.json();
 
-      console.log(data);
-
       setNewComment("");
       setIsLoadingCreate(false);
       toast.success("Comentario enviado correctamente!");

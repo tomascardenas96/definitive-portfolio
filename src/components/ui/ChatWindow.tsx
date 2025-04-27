@@ -27,8 +27,8 @@ function ChatWindow({
 
   return (
     <div
-      className={`h-[max-content] w-6/7 grid grid-rows-[3.5rem_1fr] container ${
-        !isEven && "justify-self-end"
+      className={`h-[max-content] w-4/5 grid grid-rows-[3.5rem_1fr] container ${
+        !isEven && "self-end"
       }`}
     >
       <div className="border-b border-b-[var(--container-border)] px-3 grid items-center">
@@ -50,7 +50,7 @@ function ChatWindow({
       </div>
 
       <div className="px-3 py-3 pb-4">
-        <p className="text-[.72rem]">{message}</p>
+        <p className="text-[.72rem] break-words w-[16.5rem]">{message}</p>
       </div>
     </div>
   );
