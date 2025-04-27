@@ -16,7 +16,10 @@ export const deleteComment = async (id: string) => {
     return { error: "Comment not found" };
   }
 
-  if (comment.email !== session.user?.email) {
+  if (
+    comment.email !== session.user?.email &&
+    session.user?.email !== "tomascardenas.dev@gmail.com"
+  ) {
     return { error: "Unauthorized" };
   }
 

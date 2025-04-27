@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import { Comment } from "@prisma/client";
+import React, { useEffect, useState } from "react";
+import { toast } from "sonner";
 
-export const useCreateComment = () => {
+export const useCreateComment = (
+  setMessages: React.Dispatch<React.SetStateAction<Comment[]>>
+) => {
   const [newComment, setNewComment] = useState<string>("");
   const [isLoadingCreate, setIsLoadingCreate] = useState<boolean>(false);
   const [errorCreate, setErrorCreate] = useState<string>("");
@@ -18,12 +22,19 @@ export const useCreateComment = () => {
         throw new Error("Failed to create comment");
       }
 
+      const data: Comment = await response.json();
+
+      console.log(data);
+
       setNewComment("");
       setIsLoadingCreate(false);
+      toast.success("Comentario enviado correctamente!");
+      setMessages((prev: Comment[]) => [...prev, data as Comment]);
 
-      return await response.json();
+      return data;
     } catch (error) {
       console.error(error);
+      toast.error("Error al enviar el comentario");
       setErrorCreate(error as string);
     } finally {
       setIsLoadingCreate(false);

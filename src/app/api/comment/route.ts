@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
 
     const { name, email, image } = session.user!;
 
-    await prisma.comment.create({
+    const comment = await prisma.comment.create({
       data: {
         content: parsed.data.content,
         name: name!,
@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    return NextResponse.json({ message: "Comment created" }, { status: 201 });
+    return NextResponse.json(comment, { status: 201 });
   } catch (error) {
     console.error(error);
     return NextResponse.json(

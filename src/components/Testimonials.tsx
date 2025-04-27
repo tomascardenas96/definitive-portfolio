@@ -10,11 +10,16 @@ import ChatWindow from "./ui/ChatWindow";
 import SectionHeader from "./ui/SectionHeader";
 
 function Testimonials() {
-  const [handleDelete, setHandleDelete] = useState<((id: string) => void) | null>(null);
+  const [handleDelete, setHandleDelete] = useState<
+    ((id: string) => void) | null
+  >(null);
 
-  const { newComment, handleSubmit, handleChange } = useCreateComment();
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  const { messages } = useGetMessages();
+  const { messages, setMessages } = useGetMessages();
+
+  const { newComment, handleSubmit, handleChange } =
+    useCreateComment(setMessages);
 
   useEffect(() => {
     const fetchHandleDelete = async () => {
@@ -25,13 +30,11 @@ function Testimonials() {
     fetchHandleDelete();
   }, []);
 
-  const scrollRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
-  }, []);
+  }, [messages]);
 
   return (
     <div className="grid grid-rows-[5.5rem_1fr] xl:grid-rows-[4.5rem_1fr] 2xl:grid-rows-[5.5rem_1fr]">

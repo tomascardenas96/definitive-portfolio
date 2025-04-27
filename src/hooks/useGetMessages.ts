@@ -30,7 +30,7 @@ function useGetMessages() {
     fetchMessages();
   }, []);
 
-  return { messages, isLoading, error };
+  return { messages, setMessages, isLoading, error };
 }
 
 export default useGetMessages;
