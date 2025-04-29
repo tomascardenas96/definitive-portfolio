@@ -1,6 +1,6 @@
+import { createCommentSchema } from "@/dtos/comment.dto";
 import { authOptions } from "@/lib/authOptions";
 import { prisma } from "@/lib/prisma";
-import { commentSchema } from "@/utils/validate";
 import { getServerSession, Session } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
-    const parsed = commentSchema.safeParse(body);
+    const parsed = createCommentSchema.safeParse(body);
 
     if (!parsed.success) {
       return NextResponse.json(
@@ -48,8 +48,6 @@ export async function POST(req: NextRequest) {
         name: name!,
         image: image!,
         email: email!,
-        location: "Benito Juarez, AR",
-        googleId: "abc123",
       },
     });
 

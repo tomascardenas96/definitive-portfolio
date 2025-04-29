@@ -15,9 +15,8 @@ model Comment {
   content   String
   published Boolean  @default(false) // Funciona como un toggle para publicar el comentario, para evitar que se publiquen comentarios sin moderar
   createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
   email     String
-  googleId  String
   name      String
   image     String
-  location  String
 }

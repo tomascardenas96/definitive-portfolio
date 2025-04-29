@@ -34,10 +34,10 @@ function DesktopHeader() {
 
           <button
             onClick={() => signOut()}
-            className="text-[.65rem] cursor-pointer flex items-center gap-1 "
+            className="text-[.65rem] cursor-pointer flex items-center gap-[.4rem] hover:text-[#f17474] active:text-[#cd3636] transition-all duration-300"
           >
-            <p>Salir</p>
-            <CiLogin className="text-[.9rem] text-[#f73939] " />
+            <p className="">Salir</p>
+            <CiLogin className="text-[.9rem]" />
           </button>
         </div>
       ) : (

@@ -3,16 +3,19 @@ import Header from "@/components/Header";
 import Networks from "@/components/Networks";
 import Presentation from "@/components/Presentation";
 import Projects from "@/components/Projects";
-import SendMe from "@/components/ui/SendMe";
 import Skills from "@/components/Skills";
 import Stacks from "@/components/Stacks";
 import Testimonials from "@/components/Testimonials";
-import InformativeCard from "@/components/ui/InformativeCard";
-import { JSX } from "react";
 import DesktopHeader from "@/components/ui/DesktopHeader";
+import InformativeCard from "@/components/ui/InformativeCard";
+import SendMe from "@/components/ui/SendMe";
+import { authOptions } from "@/lib/authOptions";
+import { getServerSession } from "next-auth";
+import { JSX } from "react";
 
-export default function Home(): JSX.Element {
-  console.log(`${process.env.NEXTAUTH_URL}/api/auth/callback/google`)
+export default async function Home(): Promise<JSX.Element> {
+  const session = await getServerSession(authOptions);
+
   return (
     <main
       className="
@@ -70,7 +73,7 @@ export default function Home(): JSX.Element {
           <div className="grid grid-rows-[28rem_26rem] gap-[.4rem] xl:grid-rows-1 xl:grid-cols-[57%_41.9%] xl:gap-2">
             {/* Testimonios (Mensajes) */}
             <section className="container grid" id="testimonials">
-              <Testimonials />
+              <Testimonials session={session} />
             </section>
 
             {/* Mis proyectos */}
@@ -92,7 +95,7 @@ export default function Home(): JSX.Element {
       </div>
 
       <nav className="h-20 col-span-full fixed left-0 bottom-0 w-full xl:hidden">
-        <Header />
+        <Header session={session} />
       </nav>
     </main>
   );
