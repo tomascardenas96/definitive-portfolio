@@ -2,11 +2,11 @@ import React from "react";
 
 function MessagesLoader({ isEven }: { isEven: boolean }) {
   const blockStyles = "bg-[#323232] rounded-[.1rem]";
-  const contentStyles = `text-[.72rem] break-words w-[16.5rem] h-[.4rem]  ${blockStyles}`;
+  const contentStyles = `text-[.72rem] break-words w-[16.5rem] h-[.4rem] xl:w-[15rem] ${blockStyles}`;
 
   return (
     <div
-      className={`h-[max-content] w-4/5 grid grid-rows-[3.5rem_1fr] container border-none animate-pulse ${
+      className={`h-[max-content] w-4/5 grid grid-rows-[3.5rem_1fr] container border-none animate-pulse xl:w-6/7 ${
         !isEven && "self-end"
       }`}
     >
