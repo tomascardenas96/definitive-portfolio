@@ -1,7 +1,6 @@
 "use client";
 
 import { useCreateComment } from "@/hooks/useCreateComment";
-import useDeleteMessage from "@/hooks/useDeleteMessage";
 import useGetMessages from "@/hooks/useGetMessages";
 import { Comment } from "@prisma/client";
 import { Session } from "next-auth";
@@ -13,10 +12,7 @@ import MessagesLoader from "./ui/loaders/MessagesLoader";
 
 function Testimonials({ session }: { session: Session | null }) {
   const { messages, setMessages, isLoading } = useGetMessages();
-
-  const [handleDelete, setHandleDelete] = useState<
-    ((id: string) => void) | null
-  >(null);
+  const [isScrollIgnored, setIsScrollIgnored] = useState<boolean>(false); // Para ignorar el scroll cuando se edita o elimina un comentario
 
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -24,15 +20,11 @@ function Testimonials({ session }: { session: Session | null }) {
     useCreateComment(setMessages);
 
   useEffect(() => {
-    const fetchHandleDelete = async () => {
-      const { handleDelete } = await useDeleteMessage(setMessages);
-      setHandleDelete(() => handleDelete);
-    };
+    if (isScrollIgnored) {
+      setIsScrollIgnored(false);
+      return;
+    }
 
-    fetchHandleDelete();
-  }, []);
-
-  useEffect(() => {
     if (scrollRef.current && messages?.length > 0) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
@@ -65,10 +57,12 @@ function Testimonials({ session }: { session: Session | null }) {
                 message={message.content}
                 name={message.name}
                 id={message.id}
-                handleDelete={handleDelete}
                 isEven={index % 2 === 0}
                 session={session}
                 email={message.email}
+                setMessages={setMessages}
+                setIsScrollIgnored={setIsScrollIgnored}
+                updatedAt={message.updatedAt}
               />
             ))
           ) : (

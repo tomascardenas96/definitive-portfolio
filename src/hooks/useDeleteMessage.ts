@@ -4,12 +4,11 @@ import { Comment } from "@prisma/client";
 import React from "react";
 import { toast } from "sonner";
 
-async function useDeleteMessage(
-  setMessages: React.Dispatch<React.SetStateAction<Comment[]>>
-): Promise<{
-  handleDelete: (id: string) => void;
-}> {
-  const handleDelete = async (id: string) => {
+function useDeleteMessage(
+  setMessages: React.Dispatch<React.SetStateAction<Comment[]>>,
+  setIsScrollIgnored: React.Dispatch<React.SetStateAction<boolean>>
+) {
+  const handleDelete = (id: string) => {
     const deleteMessage = async () => {
       const response = await fetch(`api/comment/${id}`, {
         method: "DELETE",
@@ -26,6 +25,7 @@ async function useDeleteMessage(
     toast.promise(deleteMessage(), {
       loading: "Eliminando mensaje...",
       success: () => {
+        setIsScrollIgnored(true);
         setMessages((prev) => prev.filter((message) => message.id !== id));
         return "Mensaje eliminado correctamente";
       },

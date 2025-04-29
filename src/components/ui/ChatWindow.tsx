@@ -1,29 +1,51 @@
+import useDeleteMessage from "@/hooks/useDeleteMessage";
+import useUploadComment from "@/hooks/useUploadComment";
+import { Comment } from "@prisma/client";
 import { Session } from "next-auth";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { BsArrowReturnRight } from "react-icons/bs";
+import { MdModeEdit } from "react-icons/md";
+import { TfiBackLeft } from "react-icons/tfi";
 
 function ChatWindow({
   name,
   message,
   isEven,
   id,
-  handleDelete,
   image,
   createdAt,
+  updatedAt,
   session,
   email,
+  setMessages,
+  setIsScrollIgnored,
 }: {
   name: string;
   message: string;
   isEven: boolean;
   id: string;
-  handleDelete: ((id: string) => void) | null;
   image: string;
   createdAt: Date;
+  updatedAt: Date;
   session: Session | null;
   email: string;
+  setMessages: React.Dispatch<React.SetStateAction<Comment[]>>;
+  setIsScrollIgnored: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const uploadInputRef = useRef<HTMLTextAreaElement>(null);
+
+  const {
+    handleEditMode,
+    isEditMode,
+    editMessageInput,
+    handleChangeEditMessageInput,
+    handleKeyDownEditMessage,
+    isEdited,
+  } = useUploadComment(message, setIsOpen, setMessages, setIsScrollIgnored);
+
+  const { handleDelete } = useDeleteMessage(setMessages, setIsScrollIgnored);
 
   const createdDate = new Date(createdAt);
 
@@ -52,10 +74,7 @@ function ChatWindow({
     session?.user?.email === email ||
     session?.user?.email === "tomascardenas.dev@gmail.com";
 
-  const styles = {
-    optionsButton:
-      "cursor-pointer hover:bg-[#414141] active:bg-[#696969] p-1 rounded-[.2rem] select-none transition-all duration-300",
-  };
+  const isEditedComment = updatedAt !== createdAt;
 
   const handleOpenModal = () => {
     setIsOpen(!isOpen);
@@ -66,6 +85,22 @@ function ChatWindow({
       handleOpenModal();
       handleDelete(id);
     }
+  };
+
+  useEffect(() => {
+    if (isEditMode && uploadInputRef.current) {
+      const input = uploadInputRef.current;
+      input.focus();
+
+      const contentLength = input.value.length;
+      input.setSelectionRange(contentLength, contentLength);
+    }
+  }, [isEditMode]);
+
+  const styles = {
+    optionsButton:
+      "cursor-pointer hover:bg-[#414141] active:bg-[#696969] p-1 rounded-[.2rem] select-none transition-all duration-300",
+    editModeText: "text-[#b7b7b7] flex items-center gap-[.2rem] text-[.55rem]",
   };
 
   return (
@@ -106,20 +141,74 @@ function ChatWindow({
       </div>
 
       <div className="px-3 py-3 pb-4">
-        <p className="text-[.72rem] break-words w-[16.5rem] xl:w-[11.5rem]">{message}</p>
+        {isEditMode ? (
+          <form className="grid">
+            <textarea
+              value={editMessageInput}
+              onChange={(e) => handleChangeEditMessageInput(e, uploadInputRef)}
+              className="w-full h-auto overflow-hidden bg-[#313131] rounded-[.2rem] p-2 text-[.7rem] resize-none min-h-[3.1825rem] border border-[#414141] focus:outline-none"
+              ref={uploadInputRef}
+              onKeyDown={(e) => handleKeyDownEditMessage(e, id)}
+              maxLength={255}
+            />
+
+            <div className="flex items-center justify-between mt-2 px-1">
+              <div className="flex items-center gap-[.4rem]">
+                <p className={styles.editModeText}>
+                  Enter{" "}
+                  <BsArrowReturnRight className="text-[.5rem] text-[#189f1a] shadow-sm" />
+                </p>
+                <span className="text-[#b7b7b7] text-[.5rem]">|</span>
+                <p className={styles.editModeText}>
+                  Esc{" "}
+                  <TfiBackLeft className="text-[.5rem] text-[#9f1818] shadow-sm" />
+                </p>
+              </div>
+
+              <p
+                className={`${
+                  styles.editModeText
+                } transition-all duration-300 ${
+                  editMessageInput.length === 255 && "text-[#ff5d5d] font-[500]"
+                }`}
+              >
+                {editMessageInput.length}/255
+              </p>
+            </div>
+          </form>
+        ) : (
+          <div className="relative">
+            <p className="text-[.72rem] break-words w-[16.5rem] xl:w-[11.5rem] 2xl:w-[16.5rem]">
+              {message}
+            </p>
+
+            {(isEdited || isEditedComment) && (
+              <div className="my-1 flex items-start justify-end pr-1">
+                <p className="text-[.55rem] text-[#b7b7b7] absolute flex gap-[.2rem] items-center">
+                  <MdModeEdit /> Editado{" "}
+                </p>
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Ventana modal de opciones */}
 
       {isOpen && (
-        <div className="absolute w-[10rem] rounded-[.2rem] right-8 top-3 bg-[#313131] text-[.8rem] p-2 flex flex-col gap-2 transition-all duration-300">
+        <div className="absolute w-[10rem] rounded-[.2rem] right-9 top-2 bg-[#313131] text-[.8rem] p-2 flex flex-col gap-2 transition-all duration-300">
           {isOwner && (
             <p className={styles.optionsButton} onClick={() => onDelete()}>
               Eliminar
             </p>
           )}
           {isOwner ? (
-            <p className={styles.optionsButton}>Editar</p>
+            <p
+              className={styles.optionsButton}
+              onClick={() => handleEditMode()}
+            >
+              Editar
+            </p>
           ) : (
             <p
               className={`${styles.optionsButton} !cursor-not-allowed hover:bg-transparent active:bg-transparent text-[#696969]`}
