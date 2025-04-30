@@ -87,7 +87,7 @@ export default async function Home(): Promise<JSX.Element> {
               <Networks />
             </section>
 
-            <section className="container flex items-center justify-center mb-[5.4rem] xl:mb-0">
+            <section className="container flex justify-center mb-[5.4rem] xl:mb-0">
               <Footer />
             </section>
           </div>

@@ -16,8 +16,10 @@ function Testimonials({ session }: { session: Session | null }) {
 
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const { newComment, handleSubmit, handleChange } =
-    useCreateComment(setMessages);
+  const { newComment, handleSubmit, handleChange } = useCreateComment(
+    setMessages,
+    session
+  );
 
   useEffect(() => {
     if (isScrollIgnored) {
@@ -88,7 +90,7 @@ function Testimonials({ session }: { session: Session | null }) {
               maxLength={255}
             />
             <span
-              className={`absolute right-3 top-[36%] -translate-y-1/2 text-[#0000006a] text-[.7rem] ${
+              className={`absolute right-4 top-[35%] -translate-y-1/2 text-[#0000006a] text-[.7rem] ${
                 newComment.length === 255 && "text-[#cf29298f] font-[500]"
               }`}
             >

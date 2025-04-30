@@ -1,14 +1,22 @@
 import { Comment } from "@prisma/client";
+import { Session } from "next-auth";
 import React, { useState } from "react";
 import { toast } from "sonner";
 
 export const useCreateComment = (
-  setMessages: React.Dispatch<React.SetStateAction<Comment[]>>
+  setMessages: React.Dispatch<React.SetStateAction<Comment[]>>,
+  session: Session | null
 ) => {
   const [newComment, setNewComment] = useState<string>("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!session) {
+      toast.error("Inicia sesión para enviar un comentario");
+      return;
+    }
+
     setNewComment("");
 
     const createComment = async () => {

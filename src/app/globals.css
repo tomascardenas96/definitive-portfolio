@@ -10,6 +10,7 @@
   --inner-container-background: #ffffff0c;
   --container-border: rgba(255, 255, 255, 0.09);
   --font-unica: var(--font-unica-one);
+  --outline-color: #5158bb, #f26df9, #cd4631, #ffb100;
 }
 
 @theme inline {
