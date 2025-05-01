@@ -2,15 +2,16 @@
 
 import useSendMail from "@/hooks/useSendMail";
 import { FaHeart } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa6";
 
 export default function SendMailForm() {
   const { handleSendMail, handleChangeMessage, message } = useSendMail();
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 bg-transparent">
       <form className="w-full flex flex-col gap-3" onSubmit={handleSendMail}>
-        <h2 className="text-[1rem] text-[var(--font-color)] flex justify-center m-3 mt-0">
-          Enviame un E-mail
+        <h2 className="text-[1rem] text-[var(--font-color)] flex justify-center m-3 mt-0 gap-2 items-center">
+          <FaEnvelope /> Enviame un E-mail
         </h2>
         <textarea
           placeholder="Mensaje"
