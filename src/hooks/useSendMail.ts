@@ -1,11 +1,18 @@
+import { Session } from "next-auth";
 import React, { useState } from "react";
 import { toast } from "sonner";
 
-export default function useSendMail() {
+export default function useSendMail(session: Session | null) {
   const [message, setMessage] = useState("");
 
   const handleSendMail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!session) {
+      toast.error("Debes iniciar sesión para enviar un mensaje");
+      return;
+    }
+
     if (message.trim() === "") {
       toast.error("El mensaje no puede estar vacío");
       return;

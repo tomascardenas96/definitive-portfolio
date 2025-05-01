@@ -69,7 +69,7 @@ export default async function Home(): Promise<JSX.Element> {
         </div>
 
         {/* Right */}
-        <div className="grid gap-1 xl:gap-2 xl:grid-rows-[1fr_1fr]">
+        <div className="grid gap-[.4rem] xl:gap-2 xl:grid-rows-[1fr_1fr]">
           <div className="grid grid-rows-[28rem_26rem] gap-[.4rem] xl:grid-rows-1 xl:grid-cols-[57%_41.9%] xl:gap-2">
             {/* Testimonios (Mensajes) */}
             <section className="container grid" id="testimonials">
@@ -87,8 +87,8 @@ export default async function Home(): Promise<JSX.Element> {
               <Networks />
             </section>
 
-            <section className="container flex justify-center mb-[5.4rem] xl:mb-0">
-              <Footer />
+            <section className="container flex justify-center mb-[5.3rem] xl:mb-0">
+              <Footer session={session} />
             </section>
           </div>
         </div>

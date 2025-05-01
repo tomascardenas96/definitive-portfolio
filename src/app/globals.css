@@ -10,6 +10,7 @@
   --inner-container-background: #ffffff0c;
   --container-border: rgba(255, 255, 255, 0.09);
   --font-unica: var(--font-unica-one);
+  --button-hover: #d7d7d71c;
 }
 
 @theme inline {
@@ -60,6 +61,14 @@ body {
 
 .animate-fade-out {
   animation: fadeOut 0.5s ease-in-out;
+}
+
+.button-hover {
+  transition: background-color 0.3s ease;
+}
+
+.button-hover:hover {
+  background-color: var(--button-hover);
 }
 
 @keyframes fadeIn {

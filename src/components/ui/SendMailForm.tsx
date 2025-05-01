@@ -1,11 +1,12 @@
 "use client";
 
 import useSendMail from "@/hooks/useSendMail";
+import { Session } from "next-auth";
 import { FaHeart } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa6";
 
-export default function SendMailForm() {
-  const { handleSendMail, handleChangeMessage, message } = useSendMail();
+export default function SendMailForm({ session }: { session: Session | null }) {
+  const { handleSendMail, handleChangeMessage, message } = useSendMail(session);
 
   return (
     <div className="flex flex-col gap-3 bg-transparent">
@@ -15,11 +16,11 @@ export default function SendMailForm() {
         </h2>
         <textarea
           placeholder="Mensaje"
-          className="resize-none h-[10rem] rounded-[.6rem] outline-none border-1 border-[#ffffff12] text-[.74rem] p-2"
+          className="resize-none h-[10rem] rounded-[.6rem] outline-none shadow-xl border-1 border-[#c6c6c612] text-[.74rem] p-2 focus:border-[#9883e54e] transition-all duration-300"
           value={message}
           onChange={handleChangeMessage}
         />
-        <button className="h-[2.8rem] rounded-[.6rem] bg-linear-to-l from-[#9883e5] via-[#cd4631] to-[#ffb100] shadow-xl cursor-pointer text-[.8rem] flex gap-2 items-center justify-center font-[500]">
+        <button className="h-[2.8rem] rounded-[.6rem] bg-linear-to-l from-[#9883e5] via-[#cd4631] to-[#ffb100] shadow-xl cursor-pointer text-[.8rem] flex gap-2 items-center justify-center font-[500] active:scale-95 transition-all duration-300">
           Enviar Mensaje! <FaHeart className="inline-block" />
         </button>
       </form>

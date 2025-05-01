@@ -12,14 +12,14 @@ function Projects() {
         />
       </div>
 
-      <div className="grid h-[100%] w-[100%] items-center justify-center pb-1 xl:pb-0 2xl:pb-4">
+      {/* <div className="grid h-[100%] w-[100%] items-center justify-center pb-1 xl:pb-0 2xl:pb-4">
         <ul className="grid items-center gap-[.4rem] 2xl:gap-2 2xl:w-[14rem]">
           <ProjectCard title="Nutricoaching Integral" icon="gula" />
           <ProjectCard title="Roma Blog" icon="gula" />
           <ProjectCard title="Gula Fast Food" icon="gula" />
           <ProjectCard title="Supermercado 'Acuario'" icon="gula" />
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 }

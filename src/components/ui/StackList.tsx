@@ -2,14 +2,12 @@ import StackCard from "./StackCard";
 
 function StackList() {
   const styles = {
-    container: "flex gap-[.3rem] h-9 justify-center 2xl:h-[2.3rem] 2xl:gap-2",
-    card: "flex justify-center items-center text-xs border border-[var(--container-border)] rounded-[.5rem] bg-[var(--inner-container-background)] w-[5rem] 2xl:w-[6rem]",
-    emptyContainer:
-      "hidden container w-[4rem] !rounded-[.5rem] xl:inline-block 2xl:w-[4.4rem]",
+    container: "flex gap-[.3rem] h-9 justify-center 2xl:h-[2.3rem] 2xl:gap-1",
+    card: "flex justify-center items-center text-xs  rounded-[.5rem] bg-[var(--inner-container-background)] w-[5rem] 2xl:w-[5.5rem]",
   };
 
   return (
-    <ul className="grid grid-rows-3 gap-y-1 w-full justify-center 2xl:gap-y-2">
+    <ul className="grid grid-rows-3 gap-y-1 w-full justify-center 2xl:gap-y-1">
       <div className={`${styles.container} `}>
         <li className={`${styles.card} `}>
           <StackCard icon="html" title="HTML" />
@@ -26,7 +24,6 @@ function StackList() {
       </div>
 
       <div className={`${styles.container}`}>
-        <li className={styles.emptyContainer}></li>
         <li className={`${styles.card} `}>
           <StackCard icon="node" title="NodeJS" />
         </li>
@@ -36,7 +33,6 @@ function StackList() {
         <li className={`${styles.card} `}>
           <StackCard icon="react" title="React" />
         </li>
-        <li className={styles.emptyContainer}></li>
       </div>
 
       <div className={`${styles.container} grid-cols-4`}>

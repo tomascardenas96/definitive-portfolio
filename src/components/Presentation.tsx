@@ -42,8 +42,8 @@ function Presentation() {
         className="cursor-pointer h-max"
         rel="noopener noreferrer" // para evitar que se abra en una nueva pestaña y se cierre la actual
       >
-        <div className="flex gap-2">
-          <p className="text-[9px] max-w-[7ch] text-center h-10 flex items-center 2xl:text-[.6rem] cursor-pointer">
+        <div className="flex gap-2 cursor-pointer xl:hover:text-[#f4f4f464] xl:transition-all xl:duration-300">
+          <p className="text-[9px] max-w-[7ch] text-center h-10 flex items-center 2xl:text-[.6rem]">
             Currilum Vitae
           </p>
           <button className="h-10 w-10 grid place-content-center border border-[var(--container-border)] bg-[var(--inner-container-background)] rounded-xl cursor-pointer">
