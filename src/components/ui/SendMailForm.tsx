@@ -9,7 +9,7 @@ export default function SendMailForm() {
 
   return (
     <div className="flex flex-col gap-3 bg-transparent">
-      <form className="w-full flex flex-col gap-3" onSubmit={handleSendMail}>
+      <form className="w-full flex flex-col gap-5" onSubmit={handleSendMail}>
         <h2 className="text-[1rem] text-[var(--font-color)] flex justify-center m-3 mt-0 gap-2 items-center">
           <FaEnvelope /> Enviame un E-mail
         </h2>

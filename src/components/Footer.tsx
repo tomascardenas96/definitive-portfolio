@@ -14,7 +14,7 @@ function Footer() {
   const styles = {
     icons: "text-[var(--details-primary-color)] w-[1.2rem] h-[1.2rem]",
     button:
-      "h-[3rem] w-[100%] flex justify-center items-center gap-3 text-[.7rem] container bg-[var(--inner-container-background)] rounded-[.7rem_!important] xl:h-[2.6rem] 2xl:h-[3rem]",
+      "h-[3rem] w-[100%] cursor-pointer flex justify-center items-center gap-3 text-[.7rem] container bg-[var(--inner-container-background)] rounded-[.7rem_!important] xl:h-[2.6rem] 2xl:h-[3rem]",
   };
 
   const handleFadeOut = () => {
@@ -51,12 +51,20 @@ function Footer() {
             >
               <Mails className={styles.icons} /> Enviame un E-mail
             </button>
-            <button
-              className={styles.button}
-              onClick={() => setOpenedWindow("meet")}
+
+            <a
+              href="https://calendly.com/tomascardenas-dev/new-meeting"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-center items-center gap-2"
             >
-              <CalendarCheck2 className={styles.icons} /> Agendar un Meeting
-            </button>
+              <button className={styles.button}>
+                <CalendarCheck2
+                  className={`${styles.icons} !w-[1.1rem] !h-[1.1rem]`}
+                />{" "}
+                Agendar un Meeting
+              </button>
+            </a>
           </div>
         </div>
       )}
@@ -64,25 +72,17 @@ function Footer() {
       {openedWindow === "mail" && (
         <section className="h-full overflow-hidden ">
           <div
-            className={`h-full gap-3 grid grid-rows-[4rem_1fr] ${isClosing ? "animate-fade-out" : "animate-fade-in"}`}
+            className={`h-full gap-3 grid grid-rows-[2.5rem_1fr] ${isClosing ? "animate-fade-out" : "animate-fade-in"}`}
           >
-            <p className="text-[.65rem] text-[var(--font-color)]  flex items-center">
+            <p className="text-[.65rem] text-[var(--font-color)]  flex items-end">
               <span
-                className="cursor-pointer flex gap-1 items-center"
+                className="cursor-pointer flex gap-2 items-center"
                 onClick={handleFadeOut}
               >
                 <IoIosArrowBack /> Volver
               </span>
             </p>
             <SendMailForm />
-          </div>
-        </section>
-      )}
-
-      {openedWindow === "meet" && (
-        <section className="h-full overflow-hidden ">
-          <div className="h-full gap-3 grid ">
-            <BookingForm />
           </div>
         </section>
       )}
