@@ -1,12 +1,10 @@
 "use client";
 
-import { GiQueenCrown } from "react-icons/gi";
-import { Mails } from "lucide-react";
-import { CalendarCheck2 } from "lucide-react";
+import { CalendarCheck2, Mails } from "lucide-react";
 import { useState } from "react";
-import SendMailForm from "./ui/SendMailForm";
+import { GiQueenCrown } from "react-icons/gi";
 import { IoIosArrowBack } from "react-icons/io";
-import BookingForm from "./ui/BookingForm";
+import SendMailForm from "./ui/SendMailForm";
 function Footer() {
   const [openedWindow, setOpenedWindow] = useState<string>("default");
   const [isClosing, setIsClosing] = useState<boolean>(false);
