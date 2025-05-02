@@ -1,5 +1,8 @@
 @import "tailwindcss";
 @plugin 'tailwind-scrollbar';
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
 
 :root {
   --background: #ffffff;
@@ -69,6 +72,23 @@ body {
 
 .button-hover:hover {
   background-color: var(--button-hover);
+}
+
+.custom-swiper-button-next,
+.custom-swiper-button-prev {
+  color: var(--details-primary-color);
+  padding: 0.75rem !important;
+  width: 2rem !important;
+  height: 2rem !important;
+}
+
+.custom-swiper-button-next:hover,
+.custom-swiper-button-prev:hover {
+  color: var(--details-primary-color);
+}
+
+.swiper-pagination {
+  bottom: 0.5rem !important; /* Más cerca del fondo */
 }
 
 @keyframes fadeIn {

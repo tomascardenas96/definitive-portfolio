@@ -1,4 +1,4 @@
-import ProjectCard from "./ui/ProjectCard";
+import ProjectsGallery from "./ui/ProjectsGallery";
 import SectionHeader from "./ui/SectionHeader";
 
 function Projects() {
@@ -20,6 +20,8 @@ function Projects() {
           <ProjectCard title="Supermercado 'Acuario'" icon="gula" />
         </ul>
       </div> */}
+
+      <ProjectsGallery />
     </div>
   );
 }
