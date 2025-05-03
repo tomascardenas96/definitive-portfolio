@@ -6,7 +6,7 @@ function NetworkCard({ icon, url }: { icon: string; url: string }) {
   const iconStyles = "h-[1.1rem] w-[1.1rem]";
 
   return (
-    <li className="h-[4rem] container bg-[var(--inner-container-background)] flex gap-3 justify-center items-center xl:h-[3.5rem] xl:!rounded-[.6rem] ">
+    <li className="h-[4rem] container-styles bg-[var(--inner-container-background)] flex gap-3 justify-center items-center xl:h-[3.5rem] xl:!rounded-[.6rem] ">
       <div className="w-[2.8rem] h-[2.8rem] grid place-content-center rounded-2xl shadow-md shadow-[#0000009c] xl:w-[2.5rem] xl:h-[2.5rem]">
         {icon === "github" && <FaGithub className={iconStyles} />}
         {icon === "linkedin" && <FaLinkedin className={iconStyles} />}

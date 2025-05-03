@@ -10,7 +10,7 @@ function ProjectCard({ image, idx }: { image: string; idx: number }) {
   };
 
   return (
-    <div className="flex flex-col items-center gap-2 my-2 xl:my-0">
+    <div className="flex flex-col items-center gap-1 my-2 xl:my-0 xl:gap-2">
       <div className="w-[4.5rem] relative justify-self-center drop-shadow-2xl xl:w-[3.8rem]">
         <Image
           src={image}
@@ -22,7 +22,7 @@ function ProjectCard({ image, idx }: { image: string; idx: number }) {
       </div>
 
       <div>
-        <h1 className="flex justify-center text-[.9rem] h-[1.3rem] font-[500] xl:text-[.75rem] xl:h-[1.1rem]">
+        <h1 className="flex justify-center text-[1.1rem] h-[1.6rem] font-[500] xl:text-[.75rem] xl:h-[1.1rem]">
           Cohesiva Integral
         </h1>
         <h2 className="flex justify-center text-[.72rem] gap-1">
