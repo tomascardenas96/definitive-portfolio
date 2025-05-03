@@ -4,7 +4,7 @@ import React from "react";
 
 function Presentation() {
   return (
-    <div className="grid grid-cols-[7rem_1fr_max-content] gap-3 2xl:grid-cols-[7.2rem_1fr_max-content] 2xl:gap-4">
+    <div className="grid grid-cols-[7rem_1fr] gap-3 relative 2xl:grid-cols-[7.2rem_1fr] 2xl:gap-4">
       <div className="relative rounded-xl w-[7rem] h-[7rem] bg-[#ffffff11] xl:w-[6rem] xl:h-[6rem] 2xl:w-[7.2rem] 2xl:h-[7.2rem]">
         {/* <Image
           src="/images/tomas-cardenas-pic.webp"
@@ -39,11 +39,11 @@ function Presentation() {
       <Link
         href="/cv/CV-Tomas-Cardenas-es-UPDATED.pdf"
         target="_blank"
-        className="cursor-pointer h-max"
+        className="cursor-pointer h-max absolute right-0 top-0"
         rel="noopener noreferrer" // para evitar que se abra en una nueva pestaña y se cierre la actual
       >
         <div className="flex gap-2 cursor-pointer xl:hover:text-[#f4f4f464] xl:transition-all xl:duration-300">
-          <p className="text-[9px] max-w-[7ch] text-center h-10 flex items-center 2xl:text-[.6rem]">
+          <p className="hidden text-[9px] max-w-[7ch] text-center h-10 2xs:flex items-center 2xl:text-[.6rem]">
             Currilum Vitae
           </p>
           <button className="h-10 w-10 grid place-content-center border border-[var(--container-border)] bg-[var(--inner-container-background)] rounded-xl cursor-pointer">

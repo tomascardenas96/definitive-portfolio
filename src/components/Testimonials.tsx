@@ -45,9 +45,9 @@ function Testimonials({ session }: { session: Session | null }) {
         />
       </div>
 
-      <div className="grid grid-rows-[1fr_3.5rem] px-1 gap-4 mt-1 max-h-[21.5rem] overflow-hidden xl:h-[calc(44vh-5.5rem)] xl:min-h-[14.375rem] xl:max-h-[26rem] xl:grid-rows-[1fr_3rem] 2xl:min-h-[18.7rem]">
+      <div className="grid grid-rows-[1fr_3.5rem] px-1 gap-4 mt-1 max-h-[21.5rem] overflow-hidden xl:h-[calc(44vh-5.5rem)] xl:min-h-[14.375rem] xl:max-h-[20rem] xl:grid-rows-[1fr_3rem] 2xl:min-h-[18.7rem]">
         <div
-          className="flex flex-col overflow-y-auto gap-3 px-4 mt-2 2xl:scrollbar-thin 2xl:scrollbar-thumb-[#ffffff48] 2xl:scrollbar-track-[transparent]"
+          className="flex flex-col overflow-y-auto gap-3 px-4 mt-2 xl:scrollbar-thin xl:scrollbar-thumb-[#ffffff48] xl:scrollbar-track-[transparent]"
           ref={scrollRef}
         >
           {!isLoading ? (

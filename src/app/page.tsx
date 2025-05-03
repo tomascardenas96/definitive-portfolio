@@ -19,18 +19,18 @@ export default async function Home(): Promise<JSX.Element> {
   return (
     <main
       className="
-      w-[98%]
       h-[calc(100%-2.6rem)]
-      mx-auto
-      max-w-[28.875rem]
+      mx-4
       mt-4
+      justify-self-center
+      max-w-[27rem]
       xl:max-w-[68rem]
       custom:max-w-[88rem]
       2xl:max-w-[80rem]
       "
     >
       <div className="grid gap-[.4rem] h-full xl:grid-cols-[1fr_1.45fr] xl:grid-rows-[2.4rem_1fr] xl:gap-2 2xl:grid-rows-[2.6rem_1fr] 2xl:grid-cols-[1fr_1.4fr]">
-        <nav className="h-[2.4rem] container hidden rows col-span-full !rounded-[.2rem] xl:grid 2xl:h-[2.6rem] ">
+        <nav className="h-[2.4rem] container-styles hidden rows col-span-full !rounded-[.2rem] xl:grid 2xl:h-[2.6rem] ">
           <DesktopHeader />
         </nav>
 
@@ -54,8 +54,8 @@ export default async function Home(): Promise<JSX.Element> {
           </section>
 
           {/* Presentacion (contenido principal) */}
-          <section className="container grid items-center">
-            <div className="grid grid-rows-[7rem_.6fr_max-content] gap-[.4rem] items-center py-10 px-3 xl:gap-0 xl:py-0 xl:max-h-[25rem] xl:grid-rows-[6rem_.6fr_max-content] 2xl:py-3 2xl:px-3 2xl:pb-6 2xl:grid-rows-[8rem_.6fr_max-content] 2xl:gap-1">
+          <section className="container-styles grid items-center">
+            <div className="grid grid-rows-[7rem_.6fr_max-content] gap-[.4rem] items-center py-5 px-3 xl:gap-0 xl:py-0 xl:max-h-[25rem] xl:grid-rows-[6rem_.6fr_max-content] 2xl:py-3 2xl:px-3 2xl:pb-6 2xl:grid-rows-[8rem_.6fr_max-content] 2xl:gap-1">
               <Presentation />
               <Skills />
               <SendMe />
@@ -63,7 +63,7 @@ export default async function Home(): Promise<JSX.Element> {
           </section>
 
           {/* Stack Tecnologico */}
-          <section className="container grid items-center" id="stack">
+          <section className="container-styles grid items-center" id="stack">
             <Stacks />
           </section>
         </div>
@@ -72,22 +72,22 @@ export default async function Home(): Promise<JSX.Element> {
         <div className="grid gap-[.4rem] xl:gap-2 xl:grid-rows-[1fr_1fr]">
           <div className="grid grid-rows-[28rem_26rem] gap-[.4rem] xl:grid-rows-1 xl:grid-cols-[57%_41.9%] xl:gap-2">
             {/* Testimonios (Mensajes) */}
-            <section className="container grid" id="testimonials">
+            <section className="container-styles grid" id="testimonials">
               <Testimonials session={session} />
             </section>
 
             {/* Mis proyectos */}
-            <section className="container" id="projects">
+            <section className="container-styles" id="projects">
               <Projects />
             </section>
           </div>
 
           <div className="grid grid-rows-[24rem_31rem] gap-[.4rem] xl:grid-rows-1 xl:grid-cols-[45%_53.9%] 2xl:gap-2">
-            <section className="container">
+            <section className="container-styles">
               <Networks />
             </section>
 
-            <section className="container flex justify-center mb-[5.3rem] xl:mb-0">
+            <section className="container-styles flex justify-center mb-[5.3rem] xl:mb-0">
               <Footer session={session} />
             </section>
           </div>

@@ -105,7 +105,7 @@ function ChatWindow({
 
   return (
     <div
-      className={`h-[max-content] w-4/5 grid grid-rows-[3.5rem_1fr] container relative xl:w-6/7 ${
+      className={`h-[max-content] w-4/5 grid grid-rows-[3.5rem_1fr] container-styles relative xl:w-6/7 ${
         !isEven && "self-end"
       }`}
     >

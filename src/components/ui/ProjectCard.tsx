@@ -1,37 +1,62 @@
-import { IoCheckmarkDoneSharp } from "react-icons/io5";
+import Image from "next/image";
+import { FaGithub } from "react-icons/fa";
+import { MdBallot } from "react-icons/md";
+import { FaEye } from "react-icons/fa";
 
-function ProjectCard({ title, icon }: { title: string; icon?: string }) {
+function ProjectCard({ image, idx }: { image: string; idx: number }) {
+  const styles = {
+    icons:
+      "size-[2.2rem] rounded-full border-[1.5px] grid place-content-center text-[1.2rem] shadow-md cursor-pointer xl:size-[1.9rem] xl:text-[1rem]",
+  };
+
   return (
-    <li
-      className="w-full 
-    h-[3.4rem] 
-    container 
-    bg-[var(--inner-container-background)] 
-    flex gap-2 
-    items-center 
-    px-5 
-    !rounded-[.5rem]
-    cursor-pointer
-    xl:h-[2.9rem] 
-    xl:hover:bg-[var(--button-hover)] 
-    xl:transition-all 
-    xl:duration-300 
-    xl:active:scale-95 
-    2xl:h-[3rem] 
-    2xl:gap-3"
-    >
-      <div className="w-[2rem] h-[2rem] rounded-md shadow-md shadow-[#0000009c] grid place-content-center xl:h-[1.8rem] xl:w-[1.8rem]">
-        {icon === "nutricoaching" && <IoCheckmarkDoneSharp />}
-        {icon === "roma" && <IoCheckmarkDoneSharp />}
-        {icon === "gula" && <IoCheckmarkDoneSharp />}
-        {icon === "portfolio" && <IoCheckmarkDoneSharp />}
-        {icon === "acuario" && <IoCheckmarkDoneSharp />}
+    <div className="flex flex-col items-center gap-2 my-2 xl:my-0">
+      <div className="w-[4.5rem] relative justify-self-center drop-shadow-2xl xl:w-[3.8rem]">
+        <Image
+          src={image}
+          alt={`Slide ${idx}`}
+          className="w-full object-cover rounded-md "
+          width={80}
+          height={80}
+        />
       </div>
 
-      <div className="grid items-center">
-        <p className="text-[.65rem]">{title}</p>
+      <div>
+        <h1 className="flex justify-center text-[.9rem] h-[1.3rem] font-[500] xl:text-[.75rem] xl:h-[1.1rem]">
+          Cohesiva Integral
+        </h1>
+        <h2 className="flex justify-center text-[.72rem] gap-1">
+          <span className="font-[500] text-[var(--details-primary-color)]">
+            Rol Designado:
+          </span>{" "}
+          Full-Stack
+        </h2>
       </div>
-    </li>
+
+      <div className="flex gap-[.5rem] justify-center my-2 xl:my-1">
+        <div className={styles.icons}>
+          <FaGithub />
+        </div>
+        <div className={styles.icons}>
+          <MdBallot />
+        </div>
+        <div className={styles.icons}>
+          <FaEye />
+        </div>
+      </div>
+
+      <div className="px-9 xl:px-[2rem]">
+        <p className="text-[.65rem]/[1.2rem] line-clamp-4 xl:line-clamp-6 xl:text-[.65rem]/[1rem]">
+          Web destinada a profesional en el ambito de la nutricion, cuyo
+          proposito es centralizar diversos profesionales relacionados con la
+          salud en un mismo lugar, donde podran ofrecer sus servicios y
+          gestionar turnos...{" "}
+          <span className="text-[var(--details-primary-color)] cursor-pointer">
+            Ver mas
+          </span>
+        </p>
+      </div>
+    </div>
   );
 }
 

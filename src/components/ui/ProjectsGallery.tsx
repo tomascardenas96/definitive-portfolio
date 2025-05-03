@@ -1,15 +1,25 @@
 // components/SwiperCarousel.tsx
 "use client";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Image from "next/image";
+import { Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import ProjectCard from "./ProjectCard";
 
-const projects = ["/images/nutricouching-logo.jpg", "/img.png", "/img2.png"];
+const images = ["/images/nutricouching-logo.jpg", "/img.png", "/img2.png"];
+
+const images2 = [
+  {
+    name: "Cohesiva Integral",
+    githubURL: "",
+    role: "Full-stack",
+    technologies: ["HTML", "CSS", "React", "Nest"],
+    image: "/images/nutricouching-logo.jpg",
+  },
+];
 
 export default function ProjectsGallery() {
   return (
@@ -23,30 +33,22 @@ export default function ProjectsGallery() {
           prevEl: ".custom-swiper-button-prev",
         }}
         pagination={{ clickable: false }}
-        autoplay={{ delay: 6000 }}
-        loop={false}
+        autoplay={{ delay: 3000 }}
+        loop={true}
         className="w-full h-78 mt-2 mr-0"
       >
-        {projects.map((project, idx) => (
+        {images.map((image, idx) => (
           <SwiperSlide key={idx}>
-            <div className="w-[8rem] h-48 relative justify-self-center">
-              <Image
-                src={project}
-                alt={`Slide ${idx}`}
-                className="w-full object-cover rounded-md"
-                width={100}
-                height={100}
-              />
-            </div>
+            <ProjectCard idx={idx} image={image} />
           </SwiperSlide>
         ))}
       </Swiper>
 
       {/* Botones personalizados */}
-      <button className="custom-swiper-button-prev grid place-content-center absolute top-[45%] left-4 -translate-y-1/2 p-2 rounded-full z-10">
+      <button className="custom-swiper-button-prev grid place-content-center absolute top-[41%] left-2 -translate-y-1/2 p-2 rounded-full z-10">
         <IoIosArrowBack />
       </button>
-      <button className="custom-swiper-button-next grid place-content-center absolute top-[45%] right-4 -translate-y-1/2 p-2 rounded-full z-10">
+      <button className="custom-swiper-button-next grid place-content-center absolute top-[41%] right-2 -translate-y-1/2 p-2 rounded-full z-10">
         <IoIosArrowForward />
       </button>
     </div>

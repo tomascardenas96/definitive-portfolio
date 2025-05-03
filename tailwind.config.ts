@@ -12,12 +12,12 @@ const config: Config = {
         sans: ["var(--font-montserrat)", "sans-serif"],
         unica: ["var(--font-unica-one)", "sans-serif"],
       },
-      screens: {
+      screen: {
         tall: { raw: "(min-width: 1536px) and (max-height: 890px)" },
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/line-clamp")],
 };
 
 export default config;

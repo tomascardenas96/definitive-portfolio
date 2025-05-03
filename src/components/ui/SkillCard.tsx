@@ -3,6 +3,7 @@ import { Mail } from "lucide-react";
 import { Globe } from "lucide-react";
 import { Handshake } from "lucide-react";
 import { BicepsFlexed } from "lucide-react";
+import { MdOutlineTimer } from "react-icons/md";
 
 function SkillCard({
   description,
@@ -11,7 +12,7 @@ function SkillCard({
   description: string;
   icon: string;
 }) {
-  const iconStyles = "w-3 h-3 text-[var(--details-primary-color)]";
+  const iconStyles = "w-4 h-4 text-[var(--details-primary-color)]";
 
   return (
     <div className="px-3 py-2 w-max  flex gap-2 rounded-full items-center h-[2.1rem] bg-[var(--inner-container-background)] xl:h-[1.8rem]">
@@ -20,7 +21,8 @@ function SkillCard({
       {icon === "friendship" && <Handshake className={iconStyles} />}
       {icon === "mail" && <Mail className={iconStyles} />}
       {icon === "responsability" && <BicepsFlexed className={iconStyles} />}
-      <p className="text-[.5rem]">{description}</p>
+      {icon === "age" && <MdOutlineTimer className={iconStyles} />}
+      <p className="text-[.6rem] decoration-none">{description}</p>
     </div>
   );
 }
