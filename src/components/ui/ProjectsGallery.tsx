@@ -23,7 +23,7 @@ const images2 = [
 
 export default function ProjectsGallery() {
   return (
-    <div className="w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-lg relative flex">
+    <div className="w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-lg relative flex xl:pt-1">
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={10}
