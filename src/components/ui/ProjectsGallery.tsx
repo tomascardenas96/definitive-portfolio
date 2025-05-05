@@ -23,7 +23,7 @@ const images2 = [
 
 export default function ProjectsGallery() {
   return (
-    <div className="w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-lg relative flex xl:pt-1">
+    <div className="w-full max-w-3xl mx-auto rounded-xl overflow-hidden -z-1 shadow-lg relative flex xl:pt-2">
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={10}
@@ -35,7 +35,7 @@ export default function ProjectsGallery() {
         pagination={{ clickable: false }}
         autoplay={{ delay: 3000 }}
         loop={true}
-        className="w-full h-78 mt-2 mr-0"
+        className="w-full mt-2 mr-0 "
       >
         {images.map((image, idx) => (
           <SwiperSlide key={idx}>

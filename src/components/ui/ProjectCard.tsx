@@ -1,17 +1,16 @@
 import Image from "next/image";
-import { FaGithub } from "react-icons/fa";
+import { FaEye, FaGithub } from "react-icons/fa";
 import { MdBallot } from "react-icons/md";
-import { FaEye } from "react-icons/fa";
 
 function ProjectCard({ image, idx }: { image: string; idx: number }) {
   const styles = {
     icons:
-      "size-[2.2rem] rounded-full border-[1.5px] grid place-content-center text-[1.2rem] shadow-md cursor-pointer xl:size-[1.9rem] xl:text-[1rem]",
+      "size-[2.2rem] rounded-full border-[1.5px] grid place-content-center text-[1.2rem] shadow-md cursor-pointer xl:size-[2.2rem] xl:text-[1.1rem]",
   };
 
   return (
-    <div className="flex flex-col items-center gap-1 my-2 xl:my-0 xl:gap-2">
-      <div className="w-[4.5rem] relative justify-self-center drop-shadow-2xl xl:w-[3.8rem]">
+    <div className="flex flex-col items-center gap-1 my-2 xl:my-0 xl:gap-2 ">
+      <div className="w-[4rem] relative justify-self-center drop-shadow-2xl xl:w-[3.8rem]">
         <Image
           src={image}
           alt={`Slide ${idx}`}
@@ -22,7 +21,7 @@ function ProjectCard({ image, idx }: { image: string; idx: number }) {
       </div>
 
       <div>
-        <h1 className="flex justify-center text-[1.1rem] h-[1.6rem] font-[500] xl:text-[.75rem] xl:h-[1.1rem]">
+        <h1 className="flex justify-center text-[1rem] h-[1.6rem] font-[500] xl:text-[.75rem] xl:h-[1.1rem]">
           Cohesiva Integral
         </h1>
         <h2 className="flex justify-center text-[.72rem] gap-1">

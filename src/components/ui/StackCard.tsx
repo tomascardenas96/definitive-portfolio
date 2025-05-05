@@ -11,15 +11,16 @@ import { SiAstro } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 
 function StackCard({ icon, title }: { icon: string; title: string }) {
-  const iconStyle = "text-[1.1rem] 2xl:text-[1.2rem]";
+  const iconStyle = "text-[1.3rem] 2xl:text-[1.5rem]";
+  
   return (
-    <div className="flex gap-1 h-[100%] w-[100%] text-[.6rem] items-center justify-center">
+    <div className="flex gap-1 h-[100%] w-[100%] items-center justify-center">
       <p>
         {icon === "html" && <FaHtml5 className={iconStyle} />}
         {icon === "css" && <FaCss3 className={iconStyle} />}
         {icon === "js" && <IoLogoJavascript className={iconStyle} />}
         {icon === "ts" && (
-          <SiTypescript className="text-[1rem] 2xl:text-[1.14rem]" />
+          <SiTypescript className="text-[1.15rem] 2xl:text-[1.4rem]" />
         )}
         {icon === "node" && <FaNodeJs className={iconStyle} />}
         {icon === "nest" && <SiNestjs className={iconStyle} />}
@@ -29,7 +30,7 @@ function StackCard({ icon, title }: { icon: string; title: string }) {
         {icon === "tailwind" && <RiTailwindCssFill className={iconStyle} />}
         {icon === "mysql" && <GrMysql className={iconStyle} />}
       </p>
-      <h2 className="text-[.7rem] header-font">{title}</h2>
+      <h2 className="text-[.75rem] header-font">{title}</h2>
     </div>
   );
 }

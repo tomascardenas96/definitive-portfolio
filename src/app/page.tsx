@@ -20,8 +20,8 @@ export default async function Home(): Promise<JSX.Element> {
     <main
       className="
       h-[calc(100%-2.6rem)]
-      mx-1
-      mt-1
+      mx-2
+      mt-2
       justify-self-center
       max-w-[27rem]
       xl:mt-4

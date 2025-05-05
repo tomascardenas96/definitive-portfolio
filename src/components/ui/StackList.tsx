@@ -1,55 +1,91 @@
+import React from "react";
 import StackCard from "./StackCard";
 
 function StackList() {
   const styles = {
-    container: "flex gap-[.3rem] h-9 justify-center 2xl:h-[2.3rem] 2xl:gap-1",
-    card: "flex justify-center items-center text-xs  rounded-[.5rem] bg-[var(--inner-container-background)] w-[5rem] 2xl:w-[5.5rem]",
+    container: `
+    relative 
+    flex 
+    h-12
+    gap-1
+    overflow-hidden 
+    2xl:h-[2.7rem] 
+    `,
+
+    card: `
+    flex 
+    justify-center 
+    items-center 
+    bg-[var(--inner-container-background)] 
+    w-[5.5rem]
+    rounded-[.2rem]
+    2xl:w-[6rem]
+    `,
+
+    masked: `
+    [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] 
+    mask-repeat-no-repeat 
+    mask-size-full
+    `,
   };
 
   return (
-    <ul className="grid grid-rows-3 gap-y-1 w-full justify-center 2xl:gap-y-1">
-      <div className={`${styles.container} `}>
-        <li className={`${styles.card} `}>
-          <StackCard icon="html" title="HTML" />
-        </li>
-        <li className={`${styles.card} `}>
-          <StackCard icon="css" title="CSS" />
-        </li>
-        <li className={`${styles.card} `}>
-          <StackCard icon="js" title="Javascript" />
-        </li>
-        <li className={`${styles.card} `}>
-          <StackCard icon="ts" title="Typescript" />
-        </li>
-      </div>
+    <div>
+      <div
+        className={`${styles.masked} max-w-[18.5rem] grid grid-rows-2 gap-y-1 2xl:max-w-[24rem]`}
+      >
+        <div className={`${styles.container} `}>
+          <ul className={`flex gap-[.3rem] animate-marquee w-max`}>
+            {[...Array(2)].map((_, i) => (
+              <React.Fragment key={`marquee-${i}`}>
+                <li className={styles.card}>
+                  <StackCard icon="html" title="HTML" />
+                </li>
+                <li className={styles.card}>
+                  <StackCard icon="css" title="CSS" />
+                </li>
+                <li className={styles.card}>
+                  <StackCard icon="js" title="Javascript" />
+                </li>
+                <li className={styles.card}>
+                  <StackCard icon="ts" title="Typescript" />
+                </li>
+                <li className={styles.card}>
+                  <StackCard icon="node" title="NodeJS" />
+                </li>
+                <li className={styles.card}>
+                  <StackCard icon="nest" title="NestJS" />
+                </li>
+              </React.Fragment>
+            ))}
+          </ul>
+        </div>
 
-      <div className={`${styles.container}`}>
-        <li className={`${styles.card} `}>
-          <StackCard icon="node" title="NodeJS" />
-        </li>
-        <li className={`${styles.card} `}>
-          <StackCard icon="nest" title="NestJS" />
-        </li>
-        <li className={`${styles.card} `}>
-          <StackCard icon="react" title="React" />
-        </li>
+        <div className={`${styles.container} `}>
+          <ul className={`flex gap-[.3rem] animate-marquee-reverse w-max `}>
+            {[...Array(2)].map((_, i) => (
+              <React.Fragment key={`reverse-marquee-${i}`}>
+                <li className={styles.card}>
+                  <StackCard icon="react" title="React" />
+                </li>
+                <li className={styles.card}>
+                  <StackCard icon="next" title="Next js" />
+                </li>
+                <li className={styles.card}>
+                  <StackCard icon="astro" title="Astro js" />
+                </li>
+                <li className={styles.card}>
+                  <StackCard icon="tailwind" title="Tailwind" />
+                </li>
+                <li className={styles.card}>
+                  <StackCard icon="mysql" title="MySQL" />
+                </li>
+              </React.Fragment>
+            ))}
+          </ul>
+        </div>
       </div>
-
-      <div className={`${styles.container} grid-cols-4`}>
-        <li className={`${styles.card} `}>
-          <StackCard icon="next" title="NextJS" />
-        </li>
-        <li className={`${styles.card} `}>
-          <StackCard icon="astro" title="Astro" />
-        </li>
-        <li className={`${styles.card} `}>
-          <StackCard icon="tailwind" title="Tailwind" />
-        </li>
-        <li className={`${styles.card} `}>
-          <StackCard icon="mysql" title="MySQL" />
-        </li>
-      </div>
-    </ul>
+    </div>
   );
 }
 
