@@ -23,7 +23,7 @@ const images2 = [
 
 export default function ProjectsGallery() {
   return (
-    <div className="w-full max-w-3xl mx-auto rounded-xl overflow-hidden -z-1 shadow-lg relative flex xl:pt-2">
+    <div className="w-full max-w-3xl mx-auto rounded-xl overflow-hidden z-20 shadow-lg relative flex xl:pt-2">
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={10}
@@ -38,17 +38,17 @@ export default function ProjectsGallery() {
         className="w-full mt-2 mr-0 "
       >
         {images.map((image, idx) => (
-          <SwiperSlide key={idx}>
+          <SwiperSlide key={idx} className="">
             <ProjectCard idx={idx} image={image} />
           </SwiperSlide>
         ))}
       </Swiper>
 
       {/* Botones personalizados */}
-      <button className="custom-swiper-button-prev grid place-content-center absolute top-[41%] left-2 -translate-y-1/2 p-2 rounded-full z-10">
+      <button className="custom-swiper-button-prev grid place-content-center absolute top-[41%] left-2 -translate-y-1/2 p-2 rounded-full z-30">
         <IoIosArrowBack />
       </button>
-      <button className="custom-swiper-button-next grid place-content-center absolute top-[41%] right-2 -translate-y-1/2 p-2 rounded-full z-10">
+      <button className="custom-swiper-button-next grid place-content-center absolute top-[41%] right-2 -translate-y-1/2 p-2 rounded-full z-30">
         <IoIosArrowForward />
       </button>
     </div>

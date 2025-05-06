@@ -23,11 +23,11 @@ export default async function Home(): Promise<JSX.Element> {
       mx-2
       mt-2
       justify-self-center
-      max-w-[27rem]
+      w-[27rem]
       xl:mt-4
-      xl:max-w-[68rem]
-      custom:max-w-[88rem]
-      2xl:max-w-[80rem]
+      xl:w-[68rem]
+      2xl:w-[80rem]
+      xxl-h880:w-70
       "
     >
       <div className="grid gap-[.4rem] h-full xl:grid-cols-[1fr_1.45fr] xl:grid-rows-[2.4rem_1fr] xl:gap-2 2xl:grid-rows-[2.6rem_1fr] 2xl:grid-cols-[1fr_1.4fr]">
@@ -36,7 +36,7 @@ export default async function Home(): Promise<JSX.Element> {
         </nav>
 
         {/* Left */}
-        <div className="grid grid-rows-[8.2rem_25rem_17.3rem] gap-[.4rem] xl:gap-2 xl:grid-rows-[7.6rem_2fr_1.4fr] 2xl:grid-rows-[9.5rem_2fr_1.6fr] ">
+        <div className="grid grid-rows-[8.2rem_25rem_17.3rem] gap-[.4rem] xl:gap-2 xl:grid-rows-[7.6rem_2fr_1.4fr] 2xl:grid-rows-[9.5rem_2fr_1.6fr] xxl-h880:custom-grid-rows">
           {/* 3 cartitas informativas */}
           <section className="grid grid-cols-3 gap-1 xl:gap-2">
             <InformativeCard num={0} title="Proyectos" icon="proyects" />
@@ -56,7 +56,23 @@ export default async function Home(): Promise<JSX.Element> {
 
           {/* Presentacion (contenido principal) */}
           <section className="container-styles grid items-center">
-            <div className="grid grid-rows-[7rem_.6fr_max-content] gap-[.4rem] items-center py-5 px-3 xl:gap-0 xl:py-0 xl:max-h-[25rem] xl:grid-rows-[6rem_.6fr_max-content] 2xl:py-3 2xl:px-3 2xl:pb-6 2xl:grid-rows-[8rem_.6fr_max-content] 2xl:gap-1">
+            <div
+              className="
+              grid 
+              gap-[.4rem] 
+              items-center 
+              py-5 
+              px-3 
+              xl:gap-0 
+              xl:py-0 
+              xl:max-h-[25rem] 
+              presentation-xmd
+              2xl:py-3 
+              2xl:px-3 
+              2xl:pb-6 
+              2xl:gap-1
+              "
+            >
               <Presentation />
               <Skills />
               <SendMe />
@@ -95,7 +111,7 @@ export default async function Home(): Promise<JSX.Element> {
         </div>
       </div>
 
-      <nav className="h-20 col-span-full fixed left-0 bottom-0 w-full xl:hidden">
+      <nav className="h-20 col-span-full fixed left-0 bottom-0 z-50 w-full xl:hidden">
         <Header session={session} />
       </nav>
     </main>

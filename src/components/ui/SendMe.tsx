@@ -5,7 +5,7 @@ import { IoLogoWhatsapp } from "react-icons/io5";
 function SendMe() {
   const styles = {
     button:
-      "h-14 rounded-2xl flex justify-center items-center text-xs border border-[var(--container-border)] bg-[var(--inner-container-background)] cursor-pointer gap-2 xl:h-10 xl:hover:bg-[var(--button-hover)] xl:transition-all xl:duration-300 xl:active:scale-95 2xl:h-12 ",
+      "h-14 rounded-2xl flex justify-center items-center text-xs border border-[var(--container-border)] bg-[var(--inner-container-background)] cursor-pointer gap-2 xl:h-10 xl:hover:bg-[var(--button-hover)] xl:transition-all xl:duration-300 xl:active:scale-95  2xl:h-12 contact-btns-xmd",
     icon: "text-[var(--details-primary-color)] w-5 h-5",
   };
 

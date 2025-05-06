@@ -5,12 +5,12 @@ import { MdBallot } from "react-icons/md";
 function ProjectCard({ image, idx }: { image: string; idx: number }) {
   const styles = {
     icons:
-      "size-[2.2rem] rounded-full border-[1.5px] grid place-content-center text-[1.2rem] shadow-md cursor-pointer xl:size-[2.2rem] xl:text-[1.1rem]",
+      "size-[2.2rem] rounded-full border-[1.5px] grid place-content-center text-[1.2rem] shadow-md cursor-pointer xl:size-[2.2rem] xl:text-[1.1rem] project-btns-xmd",
   };
 
   return (
-    <div className="flex flex-col items-center gap-1 my-2 xl:my-0 xl:gap-2 ">
-      <div className="w-[4rem] relative justify-self-center drop-shadow-2xl xl:w-[3.8rem]">
+    <div className="flex flex-col items-center gap-1 my-2 xl:my-0 xl:gap-2 project-card-container-xmd">
+      <div className="w-[4rem] relative justify-self-center drop-shadow-2xl xl:w-[3.8rem] project-image-xmd">
         <Image
           src={image}
           alt={`Slide ${idx}`}
@@ -45,7 +45,7 @@ function ProjectCard({ image, idx }: { image: string; idx: number }) {
       </div>
 
       <div className="px-9 xl:px-[2rem]">
-        <p className="text-[.65rem]/[1.2rem] line-clamp-4 xl:line-clamp-6 xl:text-[.65rem]/[1rem]">
+        <p className="text-[.65rem]/[1.2rem] line-clamp-4 xl:line-clamp-6 xl:text-[.65rem]/[1rem] projects-text-xmd">
           Web destinada a profesional en el ambito de la nutricion, cuyo
           proposito es centralizar diversos profesionales relacionados con la
           salud en un mismo lugar, donde podran ofrecer sus servicios y

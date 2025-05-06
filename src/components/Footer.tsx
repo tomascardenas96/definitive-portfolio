@@ -31,15 +31,13 @@ function Footer({ session }: { session: Session | null }) {
       {openedWindow === "default" && (
         <div className="flex flex-col justify-center gap-5 animate-fade-in xl:gap-4">
           <div className="flex justify-center">
-            <div className="h-[5rem] w-[5rem] rounded-full bg-[var(--inner-container-background)] border border-[var(--container-border)] grid place-content-center xl:h-[4.6rem] xl:w-[4.6rem]">
+            <div className="h-[4.2rem] w-[4.2rem] rounded-full bg-[var(--inner-container-background)] border border-[var(--container-border)] grid place-content-center xl:h-[4.4rem] xl:w-[4.4rem]">
               <GiQueenCrown className="w-[1.8rem] h-[1.8rem] text-[var(--details-primary-color)] xl:h-[1.8rem] xl:w-[1.8rem]" />
             </div>
           </div>
 
           <div className="grid text-center gap-[.1rem] mb-1">
-            <h1 className="text-[1rem] xl:text-[1rem] 2xl:text-[1.2rem]">
-              Trabajemos Juntos
-            </h1>
+            <h1 className="text-[1rem] 2xl:text-[1.2rem]">Trabajemos Juntos</h1>
             <p className="text-[.73rem] header-font xl:text-[.65rem] 2xl:text-[.73rem]">
               Let’s Make Magic Happen Together!
             </p>

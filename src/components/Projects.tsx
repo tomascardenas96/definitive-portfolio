@@ -3,7 +3,7 @@ import SectionHeader from "./ui/SectionHeader";
 
 function Projects() {
   return (
-    <div className="grid grid-rows-[5.5rem_1fr] h-full xl:grid-rows-[4.5rem_1fr] 2xl:grid-rows-[5.5rem_1fr]">
+    <div className="grid grid-rows-[5.5rem_1fr] z-10 h-full xl:grid-rows-[4.5rem_1fr] 2xl:grid-rows-[5.5rem_1fr] container-header-xmd ">
       <div className="grid place-content-center border-b border-[var(--container-border)] ">
         <SectionHeader
           description="Mis Proyectos"

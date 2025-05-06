@@ -9,16 +9,16 @@ function StackList() {
     h-12
     gap-1
     overflow-hidden 
-    2xl:h-[2.7rem] 
+    2xl:h-[3rem]
     `,
 
     card: `
     flex 
     justify-center 
     items-center 
-    bg-[var(--inner-container-background)] 
+    bg-[#ffffff06]
     w-[5.5rem]
-    rounded-[.2rem]
+    rounded-[.5rem]
     2xl:w-[6rem]
     `,
 
@@ -32,28 +32,28 @@ function StackList() {
   return (
     <div>
       <div
-        className={`${styles.masked} max-w-[18.5rem] grid grid-rows-2 gap-y-1 2xl:max-w-[24rem]`}
+        className={`${styles.masked} max-w-[18.5rem] grid grid-rows-2 gap-y-1 2xl:max-w-[27rem]`}
       >
         <div className={`${styles.container} `}>
           <ul className={`flex gap-[.3rem] animate-marquee w-max`}>
             {[...Array(2)].map((_, i) => (
               <React.Fragment key={`marquee-${i}`}>
-                <li className={styles.card}>
+                <li className={`${styles.card}`}>
                   <StackCard icon="html" title="HTML" />
                 </li>
-                <li className={styles.card}>
+                <li className={`${styles.card}`}>
                   <StackCard icon="css" title="CSS" />
                 </li>
-                <li className={styles.card}>
+                <li className={`${styles.card}`}>
                   <StackCard icon="js" title="Javascript" />
                 </li>
-                <li className={styles.card}>
+                <li className={`${styles.card}`}>
                   <StackCard icon="ts" title="Typescript" />
                 </li>
-                <li className={styles.card}>
+                <li className={`${styles.card}`}>
                   <StackCard icon="node" title="NodeJS" />
                 </li>
-                <li className={styles.card}>
+                <li className={`${styles.card}`}>
                   <StackCard icon="nest" title="NestJS" />
                 </li>
               </React.Fragment>
@@ -65,19 +65,19 @@ function StackList() {
           <ul className={`flex gap-[.3rem] animate-marquee-reverse w-max `}>
             {[...Array(2)].map((_, i) => (
               <React.Fragment key={`reverse-marquee-${i}`}>
-                <li className={styles.card}>
+                <li className={`${styles.card}`}>
                   <StackCard icon="react" title="React" />
                 </li>
-                <li className={styles.card}>
+                <li className={`${styles.card}`}>
                   <StackCard icon="next" title="Next js" />
                 </li>
-                <li className={styles.card}>
+                <li className={`${styles.card}`}>
                   <StackCard icon="astro" title="Astro js" />
                 </li>
-                <li className={styles.card}>
+                <li className={`${styles.card}`}>
                   <StackCard icon="tailwind" title="Tailwind" />
                 </li>
-                <li className={styles.card}>
+                <li className={`${styles.card}`}>
                   <StackCard icon="mysql" title="MySQL" />
                 </li>
               </React.Fragment>

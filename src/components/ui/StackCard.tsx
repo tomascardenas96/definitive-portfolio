@@ -12,9 +12,9 @@ import { FaNodeJs } from "react-icons/fa";
 
 function StackCard({ icon, title }: { icon: string; title: string }) {
   const iconStyle = "text-[1.3rem] 2xl:text-[1.5rem]";
-  
+
   return (
-    <div className="flex gap-1 h-[100%] w-[100%] items-center justify-center">
+    <div className="flex gap-1 h-[100%] w-[100%] items-center justify-center text-[#8f8f8fee]">
       <p>
         {icon === "html" && <FaHtml5 className={iconStyle} />}
         {icon === "css" && <FaCss3 className={iconStyle} />}
