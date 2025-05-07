@@ -31,8 +31,11 @@ export default function RootLayout({
       lang="es"
       className={`${montserrat.variable} ${unicaOne.variable}scrollbar-thumb-sky-700 scrollbar-track-sky-300`}
     >
-      <body className="global-font xl:h-screen">
-        <div id="presentation">
+      <body className="w-full xl:min-h-[46.875rem] global-font xl:h-screen">
+        <div
+          id="presentation"
+          className=" max-w-[28.125rem] xl:min-w-max"
+        >
           <SessionWrapper>{children}</SessionWrapper>
         </div>
         <Toaster />

@@ -6,10 +6,10 @@ function StackList() {
     container: `
     relative 
     flex 
-    h-12
+    h-10
     gap-1
     overflow-hidden 
-    2xl:h-[3rem]
+    xs:h-12
     `,
 
     card: `
@@ -32,7 +32,7 @@ function StackList() {
   return (
     <div>
       <div
-        className={`${styles.masked} max-w-[18.5rem] grid grid-rows-2 gap-y-1 2xl:max-w-[27rem]`}
+        className={`${styles.masked} max-w-[16.5rem] grid grid-rows-2 gap-y-1 xs:max-w-[18.5rem] 2xl:max-w-[27rem]`}
       >
         <div className={`${styles.container} `}>
           <ul className={`flex gap-[.3rem] animate-marquee w-max`}>

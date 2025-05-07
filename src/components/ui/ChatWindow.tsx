@@ -105,13 +105,13 @@ function ChatWindow({
 
   return (
     <div
-      className={`h-[max-content] w-4/5 grid grid-rows-[3.5rem_1fr] container-styles relative xl:w-6/7 ${
+      className={`h-[max-content] w-[90%] grid grid-rows-[3.5rem_1fr] container-styles relative xs:w-4/5 xl:w-6/7 ${
         !isEven && "self-end"
       }`}
     >
       <div className="border-b border-b-[var(--container-border)] px-3 grid items-center">
-        <div className="grid items-center h-[2.3rem] gap-1 grid-cols-[2.5rem_1fr_max-content] ">
-          <div className="w-[2.3rem] h-[2.3rem] rounded-[.4rem] grid place-items-center">
+        <div className="grid items-center h-[2.3rem] gap-1 grid-cols-[2.5rem_1fr_max-content]">
+          <div className="size-9 rounded-[.4rem] grid place-items-center">
             <Image
               src={image}
               alt={name}
@@ -160,8 +160,7 @@ function ChatWindow({
                 </p>
                 <span className="text-[#b7b7b7] text-[.5rem]">|</span>
                 <p className={styles.editModeText}>
-                  Esc{" "}
-                  <TfiBackLeft className="text-[.5rem] text-[#9f1818] shadow-sm" />
+                  Esc <TfiBackLeft className="text-[.5rem] shadow-sm" />
                 </p>
               </div>
 
@@ -178,9 +177,7 @@ function ChatWindow({
           </form>
         ) : (
           <div className="relative">
-            <p className="text-[.72rem] break-words w-[16.5rem] xl:w-[11.5rem] 2xl:w-[16.5rem]">
-              {message}
-            </p>
+            <p className="text-[.72rem] break-words w-full ">{message}</p>
 
             {(isEdited || isEditedComment) && (
               <div className="my-1 flex items-start justify-end pr-1">

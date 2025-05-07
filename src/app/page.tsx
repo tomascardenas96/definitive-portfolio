@@ -19,26 +19,62 @@ export default async function Home(): Promise<JSX.Element> {
   return (
     <main
       className="
-      h-[calc(100%-2.6rem)]
-      mx-2
       mt-2
-      justify-self-center
-      w-[27rem]
+      mx-1
+      sm:m-2
+      sm:justify-self-center
+      xl:h-[calc(100%-2.6rem)]
       xl:mt-4
       xl:w-[68rem]
       2xl:w-[80rem]
-      xxl-h880:w-70
       "
     >
-      <div className="grid gap-[.4rem] h-full xl:grid-cols-[1fr_1.45fr] xl:grid-rows-[2.4rem_1fr] xl:gap-2 2xl:grid-rows-[2.6rem_1fr] 2xl:grid-cols-[1fr_1.4fr]">
-        <nav className="h-[2.4rem] container-styles hidden rows col-span-full !rounded-[.2rem] xl:grid 2xl:h-[2.6rem] ">
+      <div
+        className="
+        grid 
+        gap-[.4rem] 
+        h-full 
+        xl:grid-cols-[1fr_1.45fr] 
+        xl:grid-rows-[2.4rem_1fr] 
+        xl:gap-2 
+        2xl:grid-rows-[2.6rem_1fr] 
+        2xl:grid-cols-[1fr_1.4fr]
+        "
+      >
+        <nav
+          className="
+          h-[2.4rem] 
+          container-styles 
+          hidden 
+          rows 
+          col-span-full 
+          !rounded-[.2rem] 
+          xl:grid 
+          2xl:h-[2.6rem] "
+        >
           <DesktopHeader />
         </nav>
 
         {/* Left */}
-        <div className="grid grid-rows-[8.2rem_25rem_17.3rem] gap-[.4rem] xl:gap-2 xl:grid-rows-[7.6rem_2fr_1.4fr] 2xl:grid-rows-[9.5rem_2fr_1.6fr] xxl-h880:custom-grid-rows">
+        <div
+          className="
+          grid 
+          grid-rows-[6.5rem_23rem_17.3rem] 
+          gap-[.4rem] 
+          xs:grid-rows-[8.2rem_25rem_17.3rem] 
+          xl:gap-2 
+          xl:grid-rows-[7.6rem_2fr_1.4fr] 
+          2xl:grid-rows-[9.5rem_2fr_1.6fr]
+        "
+        >
           {/* 3 cartitas informativas */}
-          <section className="grid grid-cols-3 gap-1 xl:gap-2">
+          <section
+            className="
+              grid 
+              grid-cols-3 
+              gap-1 
+              xl:gap-2"
+          >
             <InformativeCard num={0} title="Proyectos" icon="proyects" />
             <InformativeCard
               num={2}
@@ -104,7 +140,7 @@ export default async function Home(): Promise<JSX.Element> {
               <Networks />
             </section>
 
-            <section className="container-styles flex justify-center mb-[5.3rem] xl:mb-0">
+            <section className="container-styles flex justify-center mb-[5.3rem] sm:mb-[4.9rem] xl:mb-0">
               <Footer session={session} />
             </section>
           </div>

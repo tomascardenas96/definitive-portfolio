@@ -18,14 +18,44 @@ function InformativeCard({
 
   return (
     <div className="container-styles flex flex-col justify-center items-center pb-3">
-      <h1 className="text-center text-[2.3rem] pb-[.1rem] font-medium text-[var(--font-color)] h-[3.15rem] xl:h-[2.8rem] xl:text-[2rem] 2xl:text-[2.4rem] 2xl:h-[3.7rem]">
+      <h1
+        className="
+        text-center 
+        text-[2rem] 
+        pb-[.1rem] 
+        font-medium 
+        text-[var(--font-color)] 
+        h-11 
+        xs:h-[3.15rem] 
+        xs:text-[2.3rem] 
+        xl:h-[2.8rem] 
+        xl:text-[2rem] 
+        2xl:text-[2.4rem] 
+        2xl:h-[3.7rem]
+      "
+      >
         {num}
         <span className="text-[var(--details-primary-color)]">
           {plus && "+"}
         </span>
       </h1>
 
-      <div className="flex justify-center align-center gap-1 w-[85%] border border-[var(--container-border)] bg-[var(--inner-container-background)] rounded-4xl py-2 xl:h-[2rem]">
+      <div
+        className="
+        flex 
+        justify-center 
+        items-center 
+        gap-1
+        w-[85%] 
+        border 
+        border-[var(--container-border)] 
+        bg-[var(--inner-container-background)] 
+        rounded-4xl 
+        h-6
+        xs:h-8
+        xl:h-[2rem]
+        "
+      >
         <p className="flex gap-2 xl:text-xl">
           {icon === "proyects" ? (
             <PanelsTopLeft className={iconStyles} />
@@ -35,7 +65,7 @@ function InformativeCard({
             <Sparkles className={iconStyles} />
           )}
         </p>
-        <p className="text-[.5625rem] align-center header-font text-[var(--font-color)] xl:text-[.63rem]">
+        <p className="text-[.5rem] items-center header-font text-[var(--font-color)] xs:text-[.5625rem] xl:text-[.63rem]">
           {title}
         </p>
       </div>
