@@ -50,7 +50,7 @@ function Testimonials({ session }: { session: Session | null }) {
         grid 
         place-content-center 
         border-b 
-        border-[var(--container-border)]
+        border-[var(--header-line)]
         "
       >
         <SectionHeader
@@ -164,13 +164,13 @@ function Testimonials({ session }: { session: Session | null }) {
           <div className="h-[2.5rem] flex justify-center xl:h-[2.1rem]">
             {newComment.length > 0 ? (
               <button
-                className={`${buttonStyles} bg-[#3D8C18] cursor-pointer hover:bg-[#78ae60] active:scale-90`}
+                className={`${buttonStyles} bg-[#3D8C18] cursor-pointer hover:bg-[#78ae60] text-[var(--inverted-font-color)] active:scale-90`}
               >
                 <IoSend className="text-[1.3rem] xl:text-[1.1rem]" />
               </button>
             ) : (
               <button
-                className={`${buttonStyles} bg-[#707070] hover:bg-[#9f9f9f] cursor-default`}
+                className={`${buttonStyles} bg-[#707070] hover:bg-[#9f9f9f] cursor-default text-[var(--inverted-font-color)]`}
                 disabled
               >
                 <IoSend className="text-[1.3rem] xl:text-[1.1rem]" />

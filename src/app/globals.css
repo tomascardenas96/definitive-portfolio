@@ -6,13 +6,15 @@
 @import "swiper/css/pagination";
 
 :root {
-  --background: #ffffff;
+  --background: linear-gradient(135deg, #f7f4f3 40%, #b5c6e0);
   --foreground: #171717;
-  --font-color: #ffffffb9;
-  --details-primary-color: #9883e5;
-  --container-background: #ffffff03;
-  --inner-container-background: #ffffff0c;
-  --container-border: rgba(255, 255, 255, 0.09);
+  --font-color: #242424ce;
+  --inverted-font-color: #ffffffb9;
+  --details-primary-color: #fe4e00;
+  --container-background: #bfbfbf1d;
+  --inner-container-background: #cfcfcf29;
+  --container-border: #fafafa00;
+  --header-line: #0000000f;
   --font-unica: var(--font-unica-one);
   --button-hover: #d7d7d71c;
 }
@@ -119,6 +121,7 @@
     --container-background: rgba(255, 255, 255, 0.09);
     --inner-container-background: #ffffff0c;
     --container-border: rgba(255, 255, 255, 0.09);
+    --header-line: #fefefe0f;
   }
 }
 
@@ -144,7 +147,8 @@ body {
 
 .container-styles {
   @apply border border-[var(--container-border)] rounded-2xl;
-  background: linear-gradient(110deg, #d9d9d915, #d9d9d90f);
+  /* background: linear-gradient(110deg, #d9d9d915, #d9d9d90f); */
+  background: var(--container-background);
 }
 
 .animate-fade-in {

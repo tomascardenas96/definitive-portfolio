@@ -20,7 +20,7 @@ export default function SendMailForm({ session }: { session: Session | null }) {
           value={message}
           onChange={handleChangeMessage}
         />
-        <button className="h-[2.8rem] rounded-[.6rem] bg-linear-to-l from-[#9883e5] via-[#cd4631] to-[#ffb100] shadow-xl cursor-pointer text-[.8rem] flex gap-2 items-center justify-center font-[500] active:scale-95 transition-all duration-300">
+        <button className="text-[var(--inverted-font-color)] h-[2.8rem] rounded-[.6rem] bg-linear-to-l from-[#9883e5] via-[#cd4631] to-[#ffb100] shadow-xl cursor-pointer text-[.8rem] flex gap-2 items-center justify-center font-[500] active:scale-95 transition-all duration-300">
           Enviar Mensaje! <FaHeart className="inline-block" />
         </button>
       </form>

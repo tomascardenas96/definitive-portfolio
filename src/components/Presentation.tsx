@@ -10,7 +10,7 @@ function Presentation() {
         relative 
         rounded-xl 
         size-22 
-        bg-[#ffffff11] 
+        bg-[var(--font-color)] 
         xs:size-28 
         xl:w-[6rem] 
         xl:h-[6rem] 
