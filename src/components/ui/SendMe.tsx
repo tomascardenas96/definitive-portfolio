@@ -19,12 +19,14 @@ function SendMe() {
       xs:h-14
       xs:rounded-2xl 
       xl:hover:bg-[var(--button-hover)] 
-      xl:transition-all
+      xl:dark:hover:bg-[var(--button-hover-dark)] 
+      xl:transition-background
       xl:duration-300 
       xl:active:scale-95  
       2xl:h-12 
-      contact-btns-xmd`,
-    icon: "text-[var(--details-primary-color)] size-4 xs:size-5",
+      contact-btns-xmd
+      `,
+    icon: "text-[var(--details-primary-color)] size-4 xs:size-5 dark:text-[var(--details-primary-color-dark)]",
   };
 
   return (

@@ -11,12 +11,25 @@ export default function SendMailForm({ session }: { session: Session | null }) {
   return (
     <div className="flex flex-col gap-3 bg-transparent">
       <form className="w-full flex flex-col gap-5" onSubmit={handleSendMail}>
-        <h2 className="text-[1rem] text-[var(--font-color)] flex justify-center m-3 mt-0 gap-2 items-center">
+        <h2 className="text-[1rem] flex justify-center m-3 mt-0 gap-2 items-center">
           <FaEnvelope /> Enviame un E-mail
         </h2>
         <textarea
           placeholder="Mensaje"
-          className="resize-none h-[10rem] rounded-[.6rem] outline-none shadow-xl border-1 border-[#c6c6c612] text-[.74rem] p-2 focus:border-[#9883e54e] transition-all duration-300"
+          className="
+            resize-none 
+            h-[10rem] 
+            rounded-[.6rem] 
+            outline-none 
+            shadow-xl 
+            border-1 
+            border-[#c6c6c612] 
+            text-[.74rem] 
+            p-2 
+            focus:border-[#9883e54e] 
+            text-[var(--font-color)]
+            dark:text-[var(--font-color-dark)]
+            "
           value={message}
           onChange={handleChangeMessage}
         />

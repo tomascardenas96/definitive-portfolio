@@ -13,9 +13,33 @@ function Footer({ session }: { session: Session | null }) {
   const [isClosing, setIsClosing] = useState<boolean>(false);
 
   const styles = {
-    icons: "text-[var(--details-primary-color)] w-[1.2rem] h-[1.2rem]",
-    button:
-      "h-[3rem] w-[100%] cursor-pointer flex justify-center items-center gap-3 text-[.7rem] container bg-[var(--inner-container-background)] rounded-[.7rem_!important] xl:h-[2.6rem] 2xl:h-[3rem]",
+    icons: `
+      text-[var(--details-primary-color)] 
+      w-[1.2rem] 
+      h-[1.2rem] 
+      dark:text-[var(--details-primary-color-dark)]
+      `,
+    button: `
+      h-[3rem]
+      w-[100%] 
+      border
+      border-[var(--container-border)] 
+      cursor-pointer 
+      flex 
+      justify-center 
+      items-center 
+      gap-3 
+      text-[.7rem] 
+      container 
+      bg-[var(--inner-container-background)] 
+      rounded-[.7rem_!important] 
+      xl:h-[2.6rem] 
+      xl:transition-background
+      xl:duration-300 
+      xl:hover:bg-[var(--button-hover)]
+      xl:dark:hover:bg-[var(--button-hover-dark)]  
+      2xl:h-[3rem]
+      `,
   };
 
   const handleFadeOut = () => {
@@ -32,7 +56,7 @@ function Footer({ session }: { session: Session | null }) {
         <div className="flex flex-col justify-center gap-5 animate-fade-in xl:gap-4">
           <div className="flex justify-center">
             <div className="h-[4.2rem] w-[4.2rem] rounded-full bg-[var(--inner-container-background)] border border-[var(--container-border)] grid place-content-center xl:h-[4.4rem] xl:w-[4.4rem]">
-              <GiQueenCrown className="w-[1.8rem] h-[1.8rem] text-[var(--details-primary-color)] xl:h-[1.8rem] xl:w-[1.8rem]" />
+              <GiQueenCrown className="w-[1.8rem] h-[1.8rem] text-[var(--details-primary-color)] xl:h-[1.8rem] xl:w-[1.8rem] dark:text-[var(--details-primary-color-dark)]" />
             </div>
           </div>
 
@@ -44,7 +68,7 @@ function Footer({ session }: { session: Session | null }) {
           </div>
 
           <div className="flex flex-col gap-2 mb-6">
-            <div className="rounded-[.6rem] xl:hover:bg-[var(--button-hover)] xl:transition-all xl:duration-300 xl:active:scale-95">
+            <div className="rounded-[.6rem] xl:active:scale-95">
               <button
                 className={`${styles.button}`}
                 onClick={() => setOpenedWindow("mail")}
@@ -57,7 +81,7 @@ function Footer({ session }: { session: Session | null }) {
               href="https://calendly.com/tomascardenas-dev/new-meeting"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex justify-center items-center gap-2 rounded-[.6rem] xl:hover:bg-[var(--button-hover)] xl:transition-all xl:duration-300 xl:active:scale-95"
+              className="flex justify-center items-center gap-2 rounded-[.6rem] xl:active:scale-95"
             >
               <button className={styles.button}>
                 <CalendarCheck2
@@ -75,7 +99,7 @@ function Footer({ session }: { session: Session | null }) {
           <div
             className={`h-full gap-3 grid grid-rows-[2.5rem_1fr] ${isClosing ? "animate-fade-out" : "animate-fade-in"}`}
           >
-            <p className="text-[.65rem] text-[var(--font-color)]  flex items-end xl:hover:text-[#a4a4a4] xl:transition-all xl:duration-300 xl:active:text-[#e4e4e4]">
+            <p className="text-[.65rem] flex items-end xl:hover:text-[#a4a4a4] xl:transition-all xl:duration-300 xl:active:text-[#e4e4e4]">
               <span
                 className="cursor-pointer flex gap-2 items-center"
                 onClick={handleFadeOut}

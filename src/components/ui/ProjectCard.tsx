@@ -25,7 +25,7 @@ function ProjectCard({ image, idx }: { image: string; idx: number }) {
           Cohesiva Integral
         </h1>
         <h2 className="flex justify-center text-[.72rem] gap-1">
-          <span className="font-[500] text-[var(--details-primary-color)]">
+          <span className="font-[500] text-[var(--details-primary-color)] dark:text-[var(--details-primary-color-dark)]">
             Rol Designado:
           </span>{" "}
           Full-Stack
@@ -50,7 +50,7 @@ function ProjectCard({ image, idx }: { image: string; idx: number }) {
           proposito es centralizar diversos profesionales relacionados con la
           salud en un mismo lugar, donde podran ofrecer sus servicios y
           gestionar turnos...{" "}
-          <span className="text-[var(--details-primary-color)] cursor-pointer">
+          <span className="text-[var(--details-primary-color)] cursor-pointer dark:text-[var(--details-primary-color-dark)]">
             Ver mas
           </span>
         </p>

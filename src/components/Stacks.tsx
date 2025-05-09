@@ -11,7 +11,7 @@ function Stacks() {
       pb-[2.7rem] 
       gap-1 
       items-center 
-      xs:gap-3 
+      xs:gap-2
       xl:py-0 
       xl:pb-[.7rem] 
       xl:grid-rows-[3.5rem_1fr] 

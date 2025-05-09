@@ -5,7 +5,14 @@ import Link from "next/link";
 
 function Networks() {
   const styles = {
-    link: "rounded-[.6rem] xl:hover:bg-[var(--button-hover)] xl:transition-all xl:duration-300 xl:active:scale-95",
+    link: `
+      rounded-[.6rem] 
+      xl:transition-background
+      xl:duration-300 
+      xl:hover:bg-[var(--button-hover)]
+      xl:dark:hover:bg-[var(--button-hover-dark)] 
+      xl:active:scale-95
+      `,
   };
 
   return (

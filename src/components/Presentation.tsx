@@ -59,8 +59,8 @@ function Presentation() {
 
         <p className="text-[10px] flex items-center gap-1 2xl:text-[.7rem] header-font xl:h-max xl:pt-1">
           Desarrollador Web{" "}
-          <span className="text-[var(--details-primary-color)]">
-            Full-stack!
+          <span className="text-[var(--details-primary-color)] dark:text-[var(--details-primary-color-dark)]">
+            Full-stack JR!
           </span>
         </p>
       </div>
@@ -68,10 +68,10 @@ function Presentation() {
       <Link
         href="/cv/CV-Tomas-Cardenas-es-UPDATED.pdf"
         target="_blank"
-        className="cursor-pointer h-max absolute right-0 top-0"
+        className="cursor-pointer h-max absolute right-0 top-0 "
         rel="noopener noreferrer" // para evitar que se abra en una nueva pestaña y se cierre la actual
       >
-        <div className="flex gap-2 cursor-pointer xl:hover:text-[#f4f4f464] xl:transition-all xl:duration-300">
+        <div className="flex gap-2 cursor-pointer transition-opacity duration-300 xl:hover:opacity-50">
           <p className="hidden text-[9px] max-w-[7ch] text-center items-center h-10 xs:flex 2xs:flex 2xl:text-[.6rem]">
             Currilum Vitae
           </p>

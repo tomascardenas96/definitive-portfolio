@@ -15,7 +15,24 @@ const Header = ({ session }: { session: Session | null }) => {
   };
 
   return (
-    <nav className="flex h-[100%] rounded-t-2xl items-center justify-center bg-[#10151e] left-0 w-full border-t border-[#4747476f] max-w-[28.25rem] justify-self-center select-none xl:hidden tall:bg-red-500">
+    <nav
+      className="
+        flex h-[100%] 
+        rounded-t-2xl 
+        items-center 
+        justify-center 
+        bg-[var(--background)] 
+        dark:bg-[var(--background-dark)] 
+        left-0 
+        shadow-[-1_0_5px_10px_black]
+        w-full 
+        max-w-[28.25rem] 
+        justify-self-center 
+        select-none 
+        xl:hidden 
+        tall:bg-red-500
+        "
+    >
       <ul className="w-[96%] h-[90%] grid grid-cols-5 max-w-[28.875rem]">
         <Link className={styles.iconContainer} href="/#presentation">
           <li className={styles.card}>

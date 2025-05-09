@@ -15,7 +15,7 @@ function SectionHeader({
   return (
     <div className="flex flex-col justify-center items-center gap-[.1rem]">
       <div className="flex gap-2 items-center">
-        <p className="text-[var(--details-primary-color)] text-[.8rem] xs:text-[1rem]">
+        <p className="text-[var(--details-primary-color)] text-[.8rem] xs:text-[1rem] dark:text-[var(--details-primary-color-dark)]">
           {icon === "rocket" && <BsRocketTakeoff />}
           {icon === "testimonials" && <HiChatBubbleBottomCenterText />}
           {icon === "projects" && <GrProjects className="text-[.8rem] " />}

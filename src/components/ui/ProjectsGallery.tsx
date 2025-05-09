@@ -45,10 +45,10 @@ export default function ProjectsGallery() {
       </Swiper>
 
       {/* Botones personalizados */}
-      <button className="custom-swiper-button-prev grid place-content-center absolute top-[41%] left-2 -translate-y-1/2 p-2 rounded-full z-30">
+      <button className="custom-swiper-button-prev text-[var(--details-primary-color)] grid place-content-center absolute top-[41%] left-2 -translate-y-1/2 p-2 rounded-full z-30 dark:text-[var(--details-primary-color-dark)]">
         <IoIosArrowBack />
       </button>
-      <button className="custom-swiper-button-next grid place-content-center absolute top-[41%] right-2 -translate-y-1/2 p-2 rounded-full z-30">
+      <button className="custom-swiper-button-next text-[var(--details-primary-color)] grid place-content-center absolute top-[41%] right-2 -translate-y-1/2 p-2 rounded-full z-30 dark:text-[var(--details-primary-color-dark)]">
         <IoIosArrowForward />
       </button>
     </div>

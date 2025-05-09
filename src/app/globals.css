@@ -5,18 +5,32 @@
 @import "swiper/css/navigation";
 @import "swiper/css/pagination";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: linear-gradient(135deg, #f7f4f3 40%, #b5c6e0);
+  --background: #f6efee;
+  --background-hover: #f6efee;
+  --background-dark: #05080a;
+  --background-hover-dark: #05080a;
   --foreground: #171717;
   --font-color: #242424ce;
+  --font-color-hover: #656565ce;
+  --font-color-dark: #ffffffb9;
+  --font-color-hover-dark: #ffffff93;
   --inverted-font-color: #ffffffb9;
   --details-primary-color: #fe4e00;
-  --container-background: #bfbfbf1d;
-  --inner-container-background: #cfcfcf29;
-  --container-border: #fafafa00;
+  --details-primary-color-dark: #9883e5;
+  --container-background: #bfbfbf29;
+  --container-background-dark: #ffffff0e;
+  --inner-container-background: #9f9f9f17;
+  --info-tile-bg-title: transparent;
+  --info-tile-bg-title-dark: #9f9f9f17;
+  --container-border: #c2c2c21f;
   --header-line: #0000000f;
+  --header-line-dark: #c5c5c51b;
   --font-unica: var(--font-unica-one);
-  --button-hover: #d7d7d71c;
+  --button-hover: #31313121;
+  --button-hover-dark: #ffffff1c;
 }
 
 @layer components {
@@ -112,29 +126,14 @@
   --breakpoint-xs: 375px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: linear-gradient(90deg, #05080a, #1a212c);
-    --foreground: #ededed;
-    --font-color: #ffffffb9;
-    --details-primary-color: #9883e5;
-    --container-background: rgba(255, 255, 255, 0.09);
-    --inner-container-background: #ffffff0c;
-    --container-border: rgba(255, 255, 255, 0.09);
-    --header-line: #fefefe0f;
-  }
-}
-
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
   display: flex;
   justify-content: center;
-  color: var(--font-color);
 }
 
 .header-font {
@@ -147,8 +146,6 @@ body {
 
 .container-styles {
   @apply border border-[var(--container-border)] rounded-2xl;
-  /* background: linear-gradient(110deg, #d9d9d915, #d9d9d90f); */
-  background: var(--container-background);
 }
 
 .animate-fade-in {
@@ -185,15 +182,9 @@ body {
 
 .custom-swiper-button-next,
 .custom-swiper-button-prev {
-  color: var(--details-primary-color);
   padding: 0.75rem !important;
   width: 2rem !important;
   height: 2rem !important;
-}
-
-.custom-swiper-button-next:hover,
-.custom-swiper-button-prev:hover {
-  color: var(--details-primary-color);
 }
 
 .swiper-pagination {
@@ -202,7 +193,7 @@ body {
 
 .swiper-pagination-bullet,
 .swiper-pagination-bullet-active {
-  background: var(--details-primary-color) !important;
+  background: rgba(148, 148, 148, 0.742) !important;
   margin: 0 3px !important;
 }
 
@@ -245,12 +236,5 @@ body {
   }
   from {
     transform: 0;
-  }
-}
-
-@media (prefers-color-scheme: dark) and (min-width: 1280px) {
-  :root {
-    --background: linear-gradient(120deg, #05080a 50%, #344966);
-    --foreground: #ededed;
   }
 }

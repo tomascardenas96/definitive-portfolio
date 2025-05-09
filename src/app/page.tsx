@@ -44,13 +44,16 @@ export default async function Home(): Promise<JSX.Element> {
         <nav
           className="
           h-[2.4rem] 
+          bg-[var(--container-background)]
+          dark:bg-[var(--container-background-dark)]
           container-styles 
           hidden 
           rows 
           col-span-full 
           !rounded-[.2rem] 
           xl:grid 
-          2xl:h-[2.6rem] "
+          2xl:h-[2.6rem] 
+          "
         >
           <DesktopHeader />
         </nav>
@@ -75,7 +78,7 @@ export default async function Home(): Promise<JSX.Element> {
               gap-1 
               xl:gap-2"
           >
-            <InformativeCard num={0} title="Proyectos" icon="proyects" />
+            <InformativeCard />
             <InformativeCard
               num={2}
               title="Clientes Felices"
@@ -91,7 +94,15 @@ export default async function Home(): Promise<JSX.Element> {
           </section>
 
           {/* Presentacion (contenido principal) */}
-          <section className="container-styles grid items-center">
+          <section
+            className="
+              container-styles 
+              bg-[var(--container-background)]
+              dark:bg-[var(--container-background-dark)] 
+              grid 
+              items-center
+              "
+          >
             <div
               className="
               grid 
@@ -116,7 +127,16 @@ export default async function Home(): Promise<JSX.Element> {
           </section>
 
           {/* Stack Tecnologico */}
-          <section className="container-styles grid items-center" id="stack">
+          <section
+            className="
+              container-styles 
+              bg-[var(--container-background)]
+              dark:bg-[var(--container-background-dark)]  
+              grid 
+              items-center
+              "
+            id="stack"
+          >
             <Stacks />
           </section>
         </div>
@@ -125,29 +145,81 @@ export default async function Home(): Promise<JSX.Element> {
         <div className="grid gap-[.4rem] xl:gap-2 xl:grid-rows-[1fr_1fr]">
           <div className="grid grid-rows-[28rem_26rem] gap-[.4rem] xl:grid-rows-1 xl:grid-cols-[57%_41.9%] xl:gap-2">
             {/* Testimonios (Mensajes) */}
-            <section className="container-styles grid" id="testimonials">
+            <section
+              className="
+                container-styles 
+                bg-[var(--container-background)]
+                dark:bg-[var(--container-background-dark)]   
+                grid
+              "
+              id="testimonials"
+            >
               <Testimonials session={session} />
             </section>
 
             {/* Mis proyectos */}
-            <section className="container-styles" id="projects">
+            <section
+              className="
+                container-styles 
+                bg-[var(--container-background)]
+                dark:bg-[var(--container-background-dark)]  
+              "
+              id="projects"
+            >
               <Projects />
             </section>
           </div>
 
-          <div className="grid grid-rows-[24rem_31rem] gap-[.4rem] xl:grid-rows-1 xl:grid-cols-[45%_53.9%] 2xl:gap-2">
-            <section className="container-styles">
+          <div
+            className="
+              grid 
+              grid-rows-[24rem_31rem] 
+              gap-[.4rem] 
+              xl:grid-rows-1 
+              xl:grid-cols-[45%_53.9%] 
+              2xl:gap-2
+              "
+          >
+            <section
+              className="
+                container-styles 
+                bg-[var(--container-background)]
+                dark:bg-[var(--container-background-dark)] 
+              "
+            >
               <Networks />
             </section>
 
-            <section className="container-styles flex justify-center mb-[5.3rem] sm:mb-[4.9rem] xl:mb-0">
+            <section
+              className="
+                container-styles 
+                bg-[var(--container-background)]
+                dark:bg-[var(--container-background-dark)]   
+                flex 
+                justify-center 
+                mb-[5.3rem] 
+                sm:mb-[4.9rem] 
+                xl:mb-0
+              "
+            >
               <Footer session={session} />
             </section>
           </div>
         </div>
       </div>
 
-      <nav className="h-20 col-span-full fixed left-0 bottom-0 z-50 w-full xl:hidden">
+      <nav
+        className="
+          h-20 
+          col-span-full 
+          fixed 
+          left-0 
+          bottom-0 
+          z-50 
+          w-full 
+          xl:hidden
+          "
+      >
         <Header session={session} />
       </nav>
     </main>

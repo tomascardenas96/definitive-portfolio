@@ -51,6 +51,7 @@ function Testimonials({ session }: { session: Session | null }) {
         place-content-center 
         border-b 
         border-[var(--header-line)]
+        dark:border-[var(--header-line-dark)]
         "
       >
         <SectionHeader

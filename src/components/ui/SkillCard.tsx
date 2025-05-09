@@ -13,10 +13,25 @@ function SkillCard({
   icon: string;
 }) {
   const iconStyles =
-    "w-4 h-4 text-[var(--details-primary-color)] skills-icons-xmd ";
+    "w-4 h-4 text-[var(--details-primary-color)] skills-icons-xmd dark:text-[var(--details-primary-color-dark)] ";
 
   return (
-    <div className="px-3 py-2 w-max  flex gap-1 rounded-full items-center h-[1.7rem] bg-[var(--inner-container-background)] xs:h-[2.1rem] xl:h-[1.8rem] skills-card-xmd">
+    <div
+      className="
+          px-3 
+          py-2 
+          w-max  
+          flex 
+          gap-1 
+          rounded-full 
+          items-center 
+          h-[1.7rem] 
+          bg-[var(--inner-container-background)] 
+          xs:h-[2.1rem] 
+          xl:h-[1.8rem] 
+          skills-card-xmd
+          "
+    >
       {icon === "location" && <MapPinned className={iconStyles} />}
       {icon === "language" && <Globe className={iconStyles} />}
       {icon === "friendship" && <Handshake className={iconStyles} />}
