@@ -38,16 +38,28 @@ function InformativeCard({
         <div>
           <button
             onClick={toggleDarkMode}
-            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+            className="p-2 rounded-full cursor-pointer"
             aria-label={
               darkMode ? "Switch to light mode" : "Switch to dark mode"
             }
           >
-            {darkMode ? (
-              <SunIcon className="h-5 w-5 text-yellow-300" />
-            ) : (
-              <MoonIcon className="h-5 w-5 text-gray-700" />
-            )}
+            <div className="flex flex-col items-center gap-3">
+              {darkMode ? (
+                <>
+                  <SunIcon className="size-6 text-yellow-300" />
+                  <p className="text-[.65rem] header-font text-center max-w-[15ch] xl:text-xs">
+                    Cambiar a modo claro
+                  </p>
+                </>
+              ) : (
+                <>
+                  <MoonIcon className="size-6 text-gray-700" />
+                  <p className="text-[.65rem] header-font text-center max-w-[15ch] xl:text-xs">
+                    Cambiar a modo oscuro
+                  </p>
+                </>
+              )}
+            </div>
           </button>
         </div>
       ) : (
