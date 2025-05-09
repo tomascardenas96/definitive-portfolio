@@ -1,29 +1,36 @@
 import { CloudDownload, Dot } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 function Presentation() {
   return (
-    <div className="flex gap-3 relative  2xl:gap-4">
+    <div className="flex pl-3 gap-3 relative 2xl:gap-4">
       <div
         className="
         relative 
         rounded-xl 
         size-22 
-        bg-[var(--font-color)] 
-        xs:size-28 
-        xl:w-[6rem] 
-        xl:h-[6rem] 
-        2xl:size-[7.2rem] 
+        bg-gradient-to-br
+        overflow-hidden
+        from-[#fe4c0085] 
+        to-[#fedc0085] 
+        dark:bg-gradient-to-br
+        dark:from-[#9883e5bd] 
+        dark:to-[#eb3030] 
+        xs:size-25
+        xl:size-20
+        2xl:size-25
         picture-xmd
+        
       "
       >
-        {/* <Image
-          src="/images/tomas-cardenas-pic.webp"
+        <Image
+          src="/images/tomas-cardenas-no-bg.webp"
           alt="Foto de Tomas Cardenas"
+          className="object-cover rounded-xl"
           fill
-          className="object-contain rounded-xl"
-        /> */}
+        />
       </div>
 
       <div className="py-2 grid grid-rows-[max-content_max-content_1fr] 2xl:gap-1">
@@ -53,7 +60,7 @@ function Presentation() {
           </p>
         </div>
 
-        <h2 className="flex h-full align-center text-[.9rem] mt-1 font-medium xs:text-[1.1rem] 2xl:text-[1.2rem] my-name-xmd ">
+        <h2 className="flex h-full align-center text-[.9rem] font-medium xs:text-[1.1rem] xs:mt-1 2xl:text-[1.2rem] my-name-xmd ">
           Tomás Cárdenas
         </h2>
 
