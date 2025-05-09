@@ -109,7 +109,7 @@ function ChatWindow({
         !isEven && "self-end"
       }`}
     >
-      <div className="border-b border-b-[var(--header-line)] px-3 grid items-center">
+      <div className="border-b border-b-[var(--header-line)] dark:border-b-[var(--header-line-dark)] px-3 grid items-center">
         <div className="grid items-center h-[2.3rem] gap-1 grid-cols-[2.5rem_1fr_max-content]">
           <div className="size-9 rounded-[.4rem] grid place-items-center">
             <Image
