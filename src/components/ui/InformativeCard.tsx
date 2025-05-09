@@ -83,13 +83,15 @@ function InformativeCard({
               gap-1
               w-[85%] 
               border 
-              border-[var(--container-border)] 
+              border-none 
               bg-[var(--info-tile-bg-title)] 
               rounded-4xl 
               h-6
               xs:h-8
               xl:h-[2rem]
+              dark:border-[var(--container-border)] 
               dark:bg-[var(--info-tile-bg-title-dark)] 
+              
       "
           >
             <p className="flex gap-2 xl:text-xl">

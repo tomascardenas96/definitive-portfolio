@@ -38,7 +38,7 @@ export default function ProjectsGallery() {
         className="w-full mt-2 mr-0 "
       >
         {images.map((image, idx) => (
-          <SwiperSlide key={idx} className="">
+          <SwiperSlide key={idx}>
             <ProjectCard idx={idx} image={image} />
           </SwiperSlide>
         ))}

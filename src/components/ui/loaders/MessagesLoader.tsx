@@ -6,7 +6,7 @@ function MessagesLoader({ isEven }: { isEven: boolean }) {
 
   return (
     <div
-      className={`h-[max-content] w-4/5 grid grid-rows-[3.5rem_1fr] container-styles border-none animate-pulse xl:w-6/7 ${
+      className={`h-[max-content] w-4/5 grid grid-rows-[3.5rem_1fr] container-styles  border-none animate-pulse xl:w-6/7 bg-[var(--inner-container-background)] ${
         !isEven && "self-end"
       }`}
     >
