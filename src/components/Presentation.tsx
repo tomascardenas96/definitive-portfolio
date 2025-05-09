@@ -5,7 +5,7 @@ import React from "react";
 
 function Presentation() {
   return (
-    <div className="flex pl-3 gap-3 relative 2xl:gap-4">
+    <div className="flex pl-3 gap-3 relative xl:gap-4">
       <div
         className="
         relative 

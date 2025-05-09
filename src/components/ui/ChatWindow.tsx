@@ -99,7 +99,7 @@ function ChatWindow({
 
   const styles = {
     optionsButton:
-      "cursor-pointer hover:bg-[#414141] active:bg-[#696969] p-1 rounded-[.2rem] select-none transition-all duration-300",
+      "cursor-pointer hover:bg-[#414141] active:bg-[#696969] p-1 rounded-[.2rem] select-none transition-all duration-300 dark:text-[var(--font-color-dark)]",
     editModeText: "text-[#b7b7b7] flex items-center gap-[.2rem] text-[.55rem]",
   };
 
@@ -193,7 +193,7 @@ function ChatWindow({
       {/* Ventana modal de opciones */}
 
       {isOpen && (
-        <div className="absolute w-[10rem] rounded-[.2rem] right-9 top-2 bg-[#313131] text-[.8rem] p-2 flex flex-col gap-2 transition-all duration-300">
+        <div className="absolute w-[10rem] rounded-[.2rem] right-9 top-2 bg-[var(--background)] text-[.8rem] p-2 flex flex-col gap-2 transition-all duration-300 dark:bg-[var(--background-dark)]">
           {isOwner && (
             <p className={styles.optionsButton} onClick={() => onDelete()}>
               Eliminar
