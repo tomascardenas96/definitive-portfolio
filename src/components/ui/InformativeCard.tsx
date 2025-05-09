@@ -24,15 +24,16 @@ function InformativeCard({
 
   return (
     <div
-      className="
+      className={`
         container-styles 
         bg-[var(--container-background)]  
         dark:bg-[var(--container-background-dark)] 
         flex flex-col 
         justify-center 
         items-center 
-        pb-3
-      "
+        ${title && "pb-3"}
+        
+      `}
     >
       {!num && !title && !icon ? (
         <div>
