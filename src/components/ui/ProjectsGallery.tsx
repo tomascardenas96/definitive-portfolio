@@ -1,6 +1,6 @@
-// components/SwiperCarousel.tsx
 "use client";
 
+import { projects } from "@/__mocks__/projects.mock";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -8,18 +8,6 @@ import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ProjectCard from "./ProjectCard";
-
-const images = ["/images/nutricouching-logo.jpg", "/img.png", "/img2.png"];
-
-const images2 = [
-  {
-    name: "Cohesiva Integral",
-    githubURL: "",
-    role: "Full-stack",
-    technologies: ["HTML", "CSS", "React", "Nest"],
-    image: "/images/nutricouching-logo.jpg",
-  },
-];
 
 export default function ProjectsGallery() {
   return (
@@ -35,11 +23,25 @@ export default function ProjectsGallery() {
         pagination={{ clickable: false }}
         autoplay={{ delay: 3000 }}
         loop={true}
-        className="w-full mt-2 mr-0 "
+        className="w-full mt-2 mr-0"
       >
-        {images.map((image, idx) => (
+        {projects.map((project, idx) => (
           <SwiperSlide key={idx}>
-            <ProjectCard idx={idx} image={image} />
+            <ProjectCard
+              idx={idx}
+              logo={project.logo}
+              name={project.name}
+              width={project.width}
+              height={project.height}
+              role={project.role}
+              images={project.images}
+              videos={project.videos}
+              github={project.github}
+              stack={project.stack}
+              id={project.id}
+              shortDescription={project.shortDescription}
+              description={project.description}
+            />
           </SwiperSlide>
         ))}
       </Swiper>

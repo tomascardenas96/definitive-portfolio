@@ -80,15 +80,15 @@ export default async function Home(): Promise<JSX.Element> {
           >
             <InformativeCard />
             <InformativeCard
-              num={2}
+              num={1}
               title="Clientes Felices"
               icon="clients"
-              plus={true}
+              plus={false}
             />
             <InformativeCard
-              num={5}
+              num={0}
               title="Experiencia"
-              plus={true}
+              plus={false}
               icon="experience"
             />
           </section>
@@ -110,14 +110,14 @@ export default async function Home(): Promise<JSX.Element> {
               items-center 
               py-5 
               px-3 
-              xl:gap-0 
+              xl:gap-1
               xl:py-0 
               xl:max-h-[25rem] 
               presentation-xmd
               2xl:py-3 
               2xl:px-3 
               2xl:pb-6 
-              2xl:gap-1
+              2xl:gap-2
               "
             >
               <Presentation />

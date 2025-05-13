@@ -98,8 +98,20 @@ function ChatWindow({
   }, [isEditMode]);
 
   const styles = {
-    optionsButton:
-      "cursor-pointer hover:bg-[#414141] active:bg-[#696969] p-1 rounded-[.2rem] select-none transition-all duration-300 dark:text-[var(--font-color-dark)]",
+    optionsButton: `
+      cursor-pointer 
+      p-1 
+      rounded-[.2rem] 
+      select-none 
+      transition-all 
+      duration-300 
+      dark:text-[var(--font-color-dark)]
+      rounded-sm
+      xl:transition-background
+      xl:duration-300 
+      xl:hover:bg-[var(--button-hover)]
+      xl:dark:hover:bg-[var(--button-hover-dark)]
+      xl:active:scale-95`,
     editModeText: "text-[#b7b7b7] flex items-center gap-[.2rem] text-[.55rem]",
   };
 
@@ -123,7 +135,7 @@ function ChatWindow({
 
           <div className="flex flex-col justify-center">
             <p className="text-[.7rem] font-medium">{name}</p>
-            <span className="text-[.6rem]">Benito Juarez, AR</span>
+            {/* <span className="text-[.6rem]">Benito Juarez, AR</span> */}
           </div>
 
           <div>
@@ -146,7 +158,20 @@ function ChatWindow({
             <textarea
               value={editMessageInput}
               onChange={(e) => handleChangeEditMessageInput(e, uploadInputRef)}
-              className="w-full h-auto overflow-hidden bg-[#313131] rounded-[.2rem] p-2 text-[.7rem] resize-none min-h-[3.1825rem] border border-[#414141] focus:outline-none"
+              className="
+                w-full 
+                h-auto 
+                overflow-hidden 
+                bg-[#313131] 
+                rounded-[.2rem] 
+                p-2 
+                text-[.7rem] 
+                resize-none 
+                min-h-[3.1825rem] 
+                border 
+                border-[#414141] 
+                focus:outline-none
+                "
               ref={uploadInputRef}
               onKeyDown={(e) => handleKeyDownEditMessage(e, id)}
               maxLength={255}
@@ -193,7 +218,24 @@ function ChatWindow({
       {/* Ventana modal de opciones */}
 
       {isOpen && (
-        <div className="absolute w-[10rem] rounded-[.2rem] right-9 top-2 bg-[var(--background)] text-[.8rem] p-2 flex flex-col gap-2 transition-all duration-300 dark:bg-[var(--background-dark)]">
+        <div
+          className="
+            absolute 
+            w-[10rem] 
+            rounded-[.2rem] 
+            right-9
+            top-2 
+            bg-[var(--background)] 
+            text-[.8rem] 
+            p-2 
+            flex 
+            flex-col 
+            gap-2 
+            transition-all 
+            duration-300 
+            dark:bg-[var(--background-dark)]
+        "
+        >
           {isOwner && (
             <p className={styles.optionsButton} onClick={() => onDelete()}>
               Eliminar

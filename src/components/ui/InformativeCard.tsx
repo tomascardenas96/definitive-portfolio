@@ -82,7 +82,7 @@ function InformativeCard({
               dark:text-[var(--font-color-dark)]
       "
           >
-            {num}
+            {num === 0 ? "-" : num}
             <span className="text-[var(--details-primary-color)] dark:text-[var(--details-primary-color-dark)]">
               {plus && "+"}
             </span>

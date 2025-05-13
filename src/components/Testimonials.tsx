@@ -70,9 +70,11 @@ function Testimonials({ session }: { session: Session | null }) {
         mt-1 
         max-h-[21.5rem]
         overflow-hidden 
+        transition-all
+        duration-300
         xl:h-[calc(44vh-5.5rem)] 
         xl:min-h-[16.4rem] 
-        xl:max-h-[20rem] 
+        xl:max-h-[24rem] 
         xl:grid-rows-[1fr_3rem] 
         2xl:min-h-[15.875rem]"
       >
