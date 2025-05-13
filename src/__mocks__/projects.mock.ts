@@ -71,7 +71,7 @@ export const projects = [
     description:
       "Este trabajo fue producto de una simulacion laboral dictada por No-Country, donde fuimos divididos aleatoreamente en grupos con la pauta de planificar y crear una web con tematica a eleccion en un lapso de 5 semanas. Nuestro grupo fue conformado por 8 personas, entre las cuales dividimos los distintos roles para cada uno de los integrantes. Gracias a este proyecto, fuimos promovidos a la siguiente etapa de esta simulacion.",
     shortDescription:
-      "Minimarket virtual destinado mayormente a la compra de productos de almacen, entre diversas categorias. La web cuenta con una IA llamada Kramy, la cual te ofrece recetas/preparacion de platos a eleccion.",
+      "simulacion laboral sobre un e-commerce destinado mayormente a la compra de productos de almacen, entre diversas categorias. La web cuenta con una IA llamada Kramy, la cual te ofrece recetas/preparacion de platos a eleccion.",
     videos: [
       {
         url: "/images/screenshots/kramer/kramer.mp4",
