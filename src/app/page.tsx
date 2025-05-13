@@ -80,7 +80,7 @@ export default async function Home(): Promise<JSX.Element> {
           >
             <InformativeCard />
             <InformativeCard
-              num={1}
+              num={0}
               title="Clientes Felices"
               icon="clients"
               plus={false}

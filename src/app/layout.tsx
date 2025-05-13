@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Unica_One } from "next/font/google";
 
+
 import SessionWrapper from "@/providers/SessionWrapper";
 import "./globals.css";
 import { Toaster } from "sonner";

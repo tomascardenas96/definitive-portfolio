@@ -73,7 +73,7 @@ function Presentation() {
       </div>
 
       <Link
-        href="/cv/CV-Tomas-Cardenas-es-UPDATED.pdf"
+        href="/cv/CV-Tomas-Cardenas.pdf"
         target="_blank"
         className="cursor-pointer h-max absolute right-0 top-0 "
         rel="noopener noreferrer" // para evitar que se abra en una nueva pestaña y se cierre la actual
