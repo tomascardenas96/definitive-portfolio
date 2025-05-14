@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next"
 import { Montserrat, Unica_One } from "next/font/google";
 
 
@@ -48,6 +49,7 @@ export default function RootLayout({
         <div id="presentation" className=" max-w-[28.125rem] xl:min-w-max">
           <SessionWrapper>{children}</SessionWrapper>
         </div>
+        <Analytics />
         <Toaster />
       </body>
     </html>
