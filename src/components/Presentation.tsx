@@ -67,7 +67,7 @@ function Presentation() {
         <p className="text-[10px] flex items-center gap-1 2xl:text-[.7rem] header-font xl:h-max xl:pt-1">
           Desarrollador Web{" "}
           <span className="text-[var(--details-primary-color)] dark:text-[var(--details-primary-color-dark)]">
-            Full-stack JR!
+            Full-stack!
           </span>
         </p>
       </div>
