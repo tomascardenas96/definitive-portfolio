@@ -79,7 +79,7 @@ function Presentation() {
         rel="noopener noreferrer" // para evitar que se abra en una nueva pestaña y se cierre la actual
       >
         <div className="flex gap-2 cursor-pointer transition-opacity duration-300 xl:hover:opacity-50">
-          <p className="hidden text-[9px] max-w-[7ch] text-center items-center h-10 xs:flex 2xs:flex 2xl:text-[.6rem]">
+          <p className="hidden text-[9px] max-w-[7ch] text-center mr-2 items-center h-10 xs:flex 2xs:flex 2xl:text-[.6rem]">
             Curriculum Vitae
           </p>
           <button
