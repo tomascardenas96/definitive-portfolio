@@ -80,7 +80,7 @@ function Presentation() {
       >
         <div className="flex gap-2 cursor-pointer transition-opacity duration-300 xl:hover:opacity-50">
           <p className="hidden text-[9px] max-w-[7ch] text-center items-center h-10 xs:flex 2xs:flex 2xl:text-[.6rem]">
-            Currilum Vitae
+            Curriculum Vitae
           </p>
           <button
             className="
