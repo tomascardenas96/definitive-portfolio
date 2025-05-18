@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { CircleArrowLeft, CircleArrowRight } from "lucide-react";
+import { IoMdClose } from "react-icons/io";
 
 function PreviewModal({
   handlePhotosModal,
@@ -34,16 +35,18 @@ function PreviewModal({
   const styles = {
     arrow: `
         absolute 
-        w-32 
-        h-screen 
+        w-25
+        h-[100%]
         cursor-pointer 
         flex 
         items-center 
         justify-center
         transition-colors
         duration-300
-        hover:bg-white/5
-        active:bg-white/10
+        z-1
+        xl:hover:bg-white/5
+        xl:active:bg-white/10
+        xl:w-32 
         `,
   };
 
@@ -53,7 +56,7 @@ function PreviewModal({
     <div
       className="
         w-full 
-        h-[100dvh] 
+        h-[100vh] 
         fixed 
         flex 
         justify-center 
@@ -62,18 +65,25 @@ function PreviewModal({
         left-0 
         z-70 
         bg-black/80
+        pb-10
         "
       onClick={handlePhotosModal}
     >
       <div
         className="
-            relative 
+            relative
             flex 
             justify-center 
             items-center
+            flex-col
+            gap-5
             "
         onClick={(e) => e.stopPropagation()}
       >
+        <div className="w-full flex justify-end pr-5 relative h-7">
+          <IoMdClose className="absolute z-30 size-8" onClick={handlePhotosModal} />
+        </div>
+
         {imagesAndVideos.length > 0 &&
           (!imagesAndVideos[index].isVideo ? (
             <Image
@@ -89,20 +99,20 @@ function PreviewModal({
               Your browser does not support the video tag.
             </video>
           ))}
-      </div>
 
-      <div className={`${styles.arrow} left-0`} onClick={(e) => prevPage(e)}>
-        <CircleArrowLeft className="size-10  transition-colors duration-300 text-white/60" />
-      </div>
+        <div className="w-full bottom-10 flex items-center justify-center text-sm text-[var(--font-color-dark)]">
+          <p>
+            {index + 1}/{imagesAndVideos.length}
+          </p>
+        </div>
 
-      <div className={`${styles.arrow} right-0`} onClick={(e) => nextPage(e)}>
-        <CircleArrowRight className="size-10  transition-colors duration-300 text-white/60" />
-      </div>
+        <div className={`${styles.arrow} left-0`} onClick={(e) => prevPage(e)}>
+          <CircleArrowLeft className="size-10  transition-colors duration-300 text-white/60" />
+        </div>
 
-      <div className="absolute w-full bottom-10 flex items-center justify-center text-sm text-[var(--font-color-dark)]">
-        <p>
-          {index + 1}/{imagesAndVideos.length}
-        </p>
+        <div className={`${styles.arrow} right-0`} onClick={(e) => nextPage(e)}>
+          <CircleArrowRight className="size-10  transition-colors duration-300 text-white/60" />
+        </div>
       </div>
     </div>
   );
