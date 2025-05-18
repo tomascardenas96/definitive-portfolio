@@ -77,11 +77,16 @@ function PreviewModal({
             items-center
             flex-col
             gap-5
+            xl:static
             "
         onClick={(e) => e.stopPropagation()}
       >
         <div className="w-full flex justify-end pr-5 relative h-7">
-          <IoMdClose className="absolute z-30 size-8" onClick={handlePhotosModal} />
+          <IoMdClose
+            className="absolute z-30 size-8 xl:cursor-pointer xl:hover:bg-white/5
+        xl:active:bg-white/10 transition-colors duration-300"
+            onClick={handlePhotosModal}
+          />
         </div>
 
         {imagesAndVideos.length > 0 &&
