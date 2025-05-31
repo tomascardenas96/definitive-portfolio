@@ -94,22 +94,28 @@ function Testimonials({ session }: { session: Session | null }) {
           ref={scrollRef}
         >
           {!isLoading ? (
-            messages?.map((message: Comment, index: number) => (
-              <ChatWindow
-                key={`message-${message.id}`}
-                createdAt={message.createdAt}
-                image={message.image}
-                message={message.content}
-                name={message.name}
-                id={message.id}
-                isEven={index % 2 === 0}
-                session={session}
-                email={message.email}
-                setMessages={setMessages}
-                setIsScrollIgnored={setIsScrollIgnored}
-                updatedAt={message.updatedAt}
-              />
-            ))
+            messages.length > 0 ? (
+              messages?.map((message: Comment, index: number) => (
+                <ChatWindow
+                  key={`message-${message.id}`}
+                  createdAt={message.createdAt}
+                  image={message.image}
+                  message={message.content}
+                  name={message.name}
+                  id={message.id}
+                  isEven={index % 2 === 0}
+                  session={session}
+                  email={message.email}
+                  setMessages={setMessages}
+                  setIsScrollIgnored={setIsScrollIgnored}
+                  updatedAt={message.updatedAt}
+                />
+              ))
+            ) : (
+              <div className="w-full h-full flex justify-center items-center pb-10">
+                <p className="text-sm">Aún no hay mensajes.</p>
+              </div>
+            )
           ) : (
             <>
               <MessagesLoader isEven={true} />

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 import { Montserrat, Unica_One } from "next/font/google";
-
 
 import SessionWrapper from "@/providers/SessionWrapper";
 import "./globals.css";

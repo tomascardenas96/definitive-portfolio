@@ -81,7 +81,7 @@ function PreviewModal({
             "
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="w-full flex justify-end pr-5 relative h-7">
+        <div className="w-full flex justify-end pr-5 relative h-7 xl:pr-0 ">
           <IoMdClose
             className="absolute z-30 size-8 xl:cursor-pointer xl:hover:bg-white/5
         xl:active:bg-white/10 transition-colors duration-300"
